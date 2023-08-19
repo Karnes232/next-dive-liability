@@ -12,7 +12,7 @@ import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
 import { formValidation } from "./formValidation"
-// import axios from "axios"
+import axios from "axios"
 
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
@@ -22,17 +22,20 @@ const FormComponent = () => {
     informationStateObject,
   )
 
-  // const createPdf = async data => {
-  //   axios.post("/api/pdf", {
-  //     data: data,
-  //   })
-  //   .then(function (response) {
-  //     console.log(response)
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error)
-  //   })
-  // }
+  const createPdf = async signature => {
+    axios
+      .post("/api/pdf", {
+        informationState,
+        medicalState,
+        signature,
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
 
   let sigCanvas = useRef()
   const handleSubmit = async e => {
@@ -46,7 +49,7 @@ const FormComponent = () => {
         .toDataURL("image/webp")
       setSignatureMissing(false)
       if (notValid === false) {
-        // createPdf(medicalState)
+        createPdf(signatureImage)
         console.log("Winner")
         setInformationError(false)
       } else {

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout>
       <main className="min-h-screen">
-        <FormComponent/>
+        <FormComponent />
       </main>
     </Layout>
   )
