@@ -5,7 +5,7 @@ const SecondaryMedical = ({ question, handleChange }) => {
     <>
       <div className="border-b ml-5">
         <div className="flex justify-between m-4">
-          <p className="mr-5 w-56 italic">{question.question}</p>
+          <p className="mr-5 w-56 md:w-96 italic">{question.question}</p>
           <div className="flex justify-center items-center space-x-3">
             <div className="flex justify-center items-center">
               <input

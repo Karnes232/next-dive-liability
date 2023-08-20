@@ -16,7 +16,7 @@ const MedicalCard = ({ question, handleChange }) => {
     <>
       <div className="border-b">
         <div className="flex justify-between m-4">
-          <p className="mr-5 w-56">{question.question}</p>
+          <p className="mr-5 w-56 md:w-96">{question.question}</p>
           <div className="flex justify-center items-center space-x-3">
             <div className="flex justify-center items-center">
               <input

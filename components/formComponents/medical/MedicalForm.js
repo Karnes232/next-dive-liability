@@ -61,17 +61,17 @@ const MedicalForm = ({ medicalState, setMedicalState }) => {
           </section>
           <section className="flex flex-col justify-center items-center mx-2 space-y-2">
             <div className="text-2xl my-2">Directions</div>
-            <p className="text-xs font-medium">
+            <p className="text-xs md:text-sm font-medium">
               Complete this questionnaire as a prerequisite to a recreational
               scuba diving or freediving course
             </p>
-            <p className="text-xs">
+            <p className="text-xs md:text-sm ">
               <span className="font-medium">Note to women:</span> If you are
               pregnant, or attempting to become pregnant, do not dive.
             </p>
           </section>
           <section className="my-8 mx-2 block bg-white border border-gray-200 rounded-lg shadow">
-            <main className="text-xs flex flex-col">
+            <main className="text-xs md:text-sm  flex flex-col">
               {medicalQuestions.map((question, index) => {
                 return (
                   <MedicalCard
