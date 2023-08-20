@@ -83,7 +83,7 @@ const FormComponent = () => {
       action={`/`}
       id="contact"
       onSubmit={handleSubmit}
-      className="px-2 max-w-4xl mx-auto min-h-[75vh]"
+      className="px-2 max-w-4xl mx-auto min-h-[75vh] mb-10"
     >
       <InformationForm
         informationState={informationState}
