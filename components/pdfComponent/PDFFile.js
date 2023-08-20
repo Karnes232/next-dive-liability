@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     fontFamily: "Times-Roman",
   },
   image: {
-    height:10,
+    height:120,
     width:500,
     backgroundCOlor: '#5aa6a9',
   },

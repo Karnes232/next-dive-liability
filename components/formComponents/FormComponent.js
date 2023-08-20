@@ -56,7 +56,7 @@ const FormComponent = () => {
     if (isEmpty === false) {
       signatureImage = sigCanvas.current
         .getTrimmedCanvas()
-        .toDataURL("image/webp")
+        .toDataURL("image/jpg", {crossOrigin: 'anonymous'} )
       setSignatureMissing(false)
       if (notValid === false) {
         createPdf(signatureImage)
@@ -114,7 +114,7 @@ const FormComponent = () => {
               <PDFFile
                 informationState={informationState}
                 medicalState={medicalState}
-                signature={sigCanvas.current.toDataURL("image/png")}
+                signature={sigCanvas.current.toDataURL("image/jpg", {crossOrigin: 'anonymous'} )}
               />
             }
           >
