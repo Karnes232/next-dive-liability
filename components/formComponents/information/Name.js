@@ -9,7 +9,7 @@ const Name = ({ handleChange, informationState }) => {
           name="firstName"
           id="firstName"
           className="contactFormInput peer"
-          autocomplete="given-name"
+          autoComplete="given-name"
           placeholder=" "
           required
           onChange={handleChange}
@@ -25,7 +25,7 @@ const Name = ({ handleChange, informationState }) => {
           name="lastName"
           id="lastName"
           className="contactFormInput peer"
-          autocomplete="family-name"
+          autoComplete="family-name"
           placeholder=" "
           required
           onChange={handleChange}

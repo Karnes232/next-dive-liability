@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height:120,
-    width:500,
+    width:400,
     backgroundCOlor: '#5aa6a9',
   },
   header: {

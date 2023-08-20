@@ -3,11 +3,11 @@ import SignatureCanvas from "react-signature-canvas"
 const Signature = ({ sigCanvas, signatureMissing }) => {
   return (
     <div className="flex flex-col ">
-      <div className="border rounded-md border-slate-500">
+      <div className="border rounded-md border-slate-500 h-48">
         <SignatureCanvas
           penColor="black"
           ref={sigCanvas}
-          canvasProps={{ width: 500, height: 100, className: "sigCanvas" }}
+          canvasProps={{ width: "", height: "", className: "sigCanvas w-full h-full" }}
         />
       </div>
       {signatureMissing && (
