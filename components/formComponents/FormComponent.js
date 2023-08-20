@@ -42,7 +42,7 @@ const FormComponent = () => {
         .toBlob()
         FileSaver.saveAs(blob, fileName);
     }
-    const fileName = "liability.pdf"
+    const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
     generatePdfDocument(fileName)
   }
