@@ -151,34 +151,34 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
               First Name: {informationState?.firstName || "James"}
             </Text>
             <Text style={styles.informationDivText}>
-              Email: {informationState?.email || "karnes.james@gmail.com"}
+              Email: {informationState?.email}
             </Text>
             <Text style={styles.informationDivText}>
-              Address: {informationState?.address || "Box 77"}
+              Address: {informationState?.address}
             </Text>
             <Text style={styles.informationDivText}>
-              State: {informationState?.state || "MB"}
+              State: {informationState?.state}
             </Text>
             <Text style={styles.informationDivText}>
-              Country: {informationState?.country || "Canada"}
+              Country: {informationState?.country}
             </Text>
             <Text style={styles.informationDivText}>
-              Birth Date: {informationState?.birthdate || "Feb 23 1983"}
+              Birth Date: {informationState?.birthdate}
             </Text>
           </View>
           <View style={styles.rightColumn}>
             <Text style={styles.informationDivText}>
-              Last Name: {informationState?.lastName || "Karnes"}
+              Last Name: {informationState?.lastName}
             </Text>
             <Text style={styles.informationDivText}>
-              Phone Number: {informationState?.telephone || "19826405433"}
+              Phone Number: {informationState?.telephone}
             </Text>
             <Text style={styles.informationDivText}>
-              City: {informationState?.city || "Brandon"}
+              City: {informationState?.city}
             </Text>
 
             <Text style={styles.informationDivText}>
-              Zip Code: {informationState?.zipcode || "R7A"}
+              Zip Code: {informationState?.zipcode}
             </Text>
           </View>
           
