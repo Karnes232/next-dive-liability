@@ -3,6 +3,7 @@ import { BsArrowsAngleExpand, BsArrowsAngleContract } from "react-icons/bs"
 
 import {
   medicalStatement,
+  medicalStatement2,
   medicalQuestions,
 } from "../../../data/medicalStatement"
 import MedicalCard from "./MedicalCard"
@@ -36,9 +37,16 @@ const MedicalForm = ({ medicalState, setMedicalState }) => {
         <div className="mt-2">
           <section className="m-2 block bg-white border border-gray-200 rounded-lg shadow">
             <p className="text-gray-700 text-base m-4">
-              {readMoreMedicalStatement
-                ? medicalStatement
-                : `${medicalStatement.substring(0, 150)}...`}
+              {readMoreMedicalStatement ? (
+                <>
+                  {medicalStatement}
+                  <br />
+                  <br />
+                  {medicalStatement2}
+                </>
+              ) : (
+                `${medicalStatement.substring(0, 150)}...`
+              )}
               <br />
               <button
                 className="text-blue-700"

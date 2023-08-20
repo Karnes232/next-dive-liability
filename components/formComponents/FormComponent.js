@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useRef, useState } from "react"
-
+import React, { useEffect, useRef, useState } from "react"
+import * as FileSaver from "file-saver"
 import MedicalForm from "./medical/MedicalForm"
 import InformationForm from "./information/InformationForm"
 import {
@@ -13,6 +13,8 @@ import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
 import { formValidation } from "./formValidation"
 import axios from "axios"
+import { BlobProvider, pdf } from "@react-pdf/renderer"
+import PDFFile from "../pdfComponent/PDFFile"
 
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
@@ -21,20 +23,28 @@ const FormComponent = () => {
   const [informationState, setInformationState] = useState(
     informationStateObject,
   )
+  const [isClient, setIsClient] = useState(false)
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const createPdf = async signature => {
-    axios
-      .post("/api/pdf", {
-        informationState,
-        medicalState,
-        signature,
-      })
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    let file = null
+    console.log(signature)
+    const generatePdfDocument = async fileName => {
+      const blob = await pdf(
+        <PDFFile
+          informationState={informationState}
+          medicalState={medicalState}
+          signature={signature}
+        />,
+      )
+        .toBlob()
+        FileSaver.saveAs(blob, fileName);
+    }
+    const fileName = "liability.pdf"
+
+    generatePdfDocument(fileName)
   }
 
   let sigCanvas = useRef()
@@ -98,6 +108,27 @@ const FormComponent = () => {
         >
           Submit
         </button>
+        {isClient && (
+          <BlobProvider
+            document={
+              <PDFFile
+                informationState={informationState}
+                medicalState={medicalState}
+                signature={sigCanvas.current.toDataURL("image/webp")}
+              />
+            }
+          >
+            {({ error, url }) => {
+              return (
+                url && (
+                  <a href={url} rel="noreferrer" target="_blank">
+                    Open the document
+                  </a>
+                )
+              )
+            }}
+          </BlobProvider>
+        )}
       </div>
     </form>
   )

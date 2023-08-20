@@ -1,6 +1,9 @@
 export const medicalStatement =
   "Recreational scuba diving and freediving requires good physical and mental health. There are a few medical conditions which can be hazardous while diving, listed below. Those who have, or are predisposed to, any of these conditions, should be evaluated by a physician. This Diver Medical Participant Questionnaire provides a basis to determine if you should seek out that evaluation. If you have any concerns about your diving fitness not represented on this form, consult with your physician before diving. If you are feeling ill, avoid diving. If you think you may have a contagious disease, protect yourself and others by not participating in dive training and/ or dive activities. References to “diving” on this form encompass both recreational scuba diving and freediving. This form is principally designed as an initial medical screen for new divers, but is also appropriate for divers taking continuing education. For your safety, and that of others who may dive with you, answer all questions honestly."
 
+export const medicalStatement2 =
+  "If you answered YES to questions 3, 5 or 10 above OR to any of the secondary questions, Participation in a diving course requires your physician’s approval."
+
 export const medicalQuestions = [
   {
     question:
