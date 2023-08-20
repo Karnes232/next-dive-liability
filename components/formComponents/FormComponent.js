@@ -108,27 +108,7 @@ const FormComponent = () => {
         >
           Submit
         </button>
-        {isClient && (
-          <BlobProvider
-            document={
-              <PDFFile
-                informationState={informationState}
-                medicalState={medicalState}
-                signature={sigCanvas.current.toDataURL("image/jpg", {crossOrigin: 'anonymous'} )}
-              />
-            }
-          >
-            {({ error, url }) => {
-              return (
-                url && (
-                  <a href={url} rel="noreferrer" target="_blank">
-                    Open the document
-                  </a>
-                )
-              )
-            }}
-          </BlobProvider>
-        )}
+       
       </div>
     </form>
   )
