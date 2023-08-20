@@ -148,7 +148,7 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
         <View style={styles.informationDiv}>
           <View style={styles.leftColumn}>
             <Text style={styles.informationDivText}>
-              First Name: {informationState?.firstName || "James"}
+              First Name: {informationState?.firstName}
             </Text>
             <Text style={styles.informationDivText}>
               Email: {informationState?.email}
@@ -697,6 +697,7 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
           <View style={styles.leftColumnMedical}>
           <Image
           src={signature}
+          source={signature}
           alt='Signature'
           style={styles.image}
            />
