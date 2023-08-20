@@ -114,7 +114,7 @@ const FormComponent = () => {
               <PDFFile
                 informationState={informationState}
                 medicalState={medicalState}
-                signature={sigCanvas.current.toDataURL("image/webp")}
+                signature={sigCanvas.current.toDataURL("image/png")}
               />
             }
           >

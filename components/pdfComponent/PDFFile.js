@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
   image: {
     height:10,
     width:500,
+    backgroundCOlor: '#5aa6a9',
   },
   header: {
     fontSize: 12,
@@ -615,7 +616,7 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
                   disease (GERD).
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                  Active or uncontrolled ulcerative colitis or Crohn's disease.
+                  Active or uncontrolled ulcerative colitis or Crohn&apos;s disease.
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
                   Bariatric surgery within the last 12 months.
@@ -693,12 +694,13 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
           <Text  style={styles.nonDisclosure}>
           I HAVE FULLY INFORMED MYSELF OF THE CONTENTS OF THIS LIABILITY RELEASE AND ASSUMPTION OF RISK AGREEMENT AND NON-AGENCY DISCLOSURE ACKNOWLEDGMENT AGREEMENT BY READING BOTH BEFORE SIGNING BELOW ON BEHALF OF MYSELF AND MY HEIRS AND AFFIRM THE MEDICAL QUESTIONNAIRE IS ACCURATE.
           </Text>
+          <View style={styles.leftColumnMedical}>
           <Image
           src={signature}
           alt='Signature'
           style={styles.image}
            />
-           
+           </View>
       </Page>
     </Document>
   )
