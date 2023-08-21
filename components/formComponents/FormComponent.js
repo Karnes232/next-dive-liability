@@ -31,6 +31,7 @@ const FormComponent = () => {
 
   const createPdf = async signature => {
     let file = null
+    let today = new Date()
     const generatePdfDocument = async fileName => {
       const blob = await pdf(
         <PDFFile
@@ -44,7 +45,7 @@ const FormComponent = () => {
       uploadBytes(storageRef, blob).then(snapshot => {
         console.log("Uploaded a blob or file!")
         getDownloadURL(snapshot.ref).then((downloadURL) => {
-          addData('liability', `${informationState.lastName} - ${informationState.firstName}`, {url: downloadURL})
+          addData('liability', `${informationState.lastName} - ${informationState.firstName}`, {url: downloadURL, created: today })
         })
       })
       FileSaver.saveAs(blob, fileName)

@@ -17,10 +17,10 @@ const View = () => {
     fetchData().catch(console.error)
     
   }, [])
-  console.log(liabilityForms)
+  const sortedDate = liabilityForms.sort((a, b) => b.created - a.created)
   return (
     <div>
-      {liabilityForms.map((form, index ) => {
+      {sortedDate.map((form, index ) => {
 			return (
         <div key={index} className='flex w-96'>
           <a href={form.url}><div>{form.id}</div></a>
