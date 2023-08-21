@@ -18,6 +18,7 @@ import PDFFile from "../pdfComponent/PDFFile"
 import addData from "@/Firebase/addData"
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import { medicalValidation } from "./medicalValidation"
+import { useRouter } from "next/router"
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
   const [medicalError, setMedicalError] = useState(false)
@@ -26,6 +27,8 @@ const FormComponent = () => {
   const [informationState, setInformationState] = useState(
     informationStateObject,
   )
+
+  const router = useRouter()
   const [isClient, setIsClient] = useState(false)
   useEffect(() => {
     setIsClient(true)
@@ -49,7 +52,7 @@ const FormComponent = () => {
         getDownloadURL(snapshot.ref).then(downloadURL => {
           addData(
             "liability",
-            uniqid(),
+            `${informationState.lastName} - ${uniqid()}`,
             { url: downloadURL, created: today, name: `${informationState.lastName}, ${informationState.firstName}` },
           )
         })
@@ -59,6 +62,7 @@ const FormComponent = () => {
     const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
     generatePdfDocument(fileName)
+    router.push('/some-path')
   }
 
   let sigCanvas = useRef()
