@@ -55,8 +55,6 @@ const FormComponent = () => {
             `${informationState.lastName} - ${uniqid()}`,
             { url: downloadURL, created: today, name: `${informationState.lastName}, ${informationState.firstName}` },
           )
-        }).then(e => {
-          router.push('https://www.google.com')
         })
       })
       FileSaver.saveAs(blob, fileName)
