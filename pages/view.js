@@ -19,11 +19,15 @@ const View = () => {
   }, [])
   const sortedDate = liabilityForms.sort((a, b) => b.created - a.created)
   return (
-    <div>
+    <div className='max-w-4xl mx-auto'>
       {sortedDate.map((form, index ) => {
+        const newDate =new Date(form.created.seconds * 1000)
+        console.log(form.created.seconds)
+   
 			return (
-        <div key={index} className='flex w-96'>
-          <a href={form.url}><div>{form.id}</div></a>
+        <div key={index} className='flex w-full space-x-16 h-7 my-1 mx-5'>
+          <div className='w-24'>{ newDate.getDate() } - {newDate.getMonth()+1} - {newDate.getFullYear()}</div>
+          <a href={form.url}><div className='w-56'>{form.id}</div></a>
           
         </div>
       );
