@@ -55,6 +55,8 @@ const FormComponent = () => {
             `${informationState.lastName} - ${uniqid()}`,
             { url: downloadURL, created: today, name: `${informationState.lastName}, ${informationState.firstName}` },
           )
+        }).then(e => {
+          router.push('https://www.google.com')
         })
       })
       FileSaver.saveAs(blob, fileName)
@@ -62,7 +64,7 @@ const FormComponent = () => {
     const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
     generatePdfDocument(fileName)
-    router.push('/some-path')
+    
   }
 
   let sigCanvas = useRef()
