@@ -11,7 +11,7 @@ const View = () => {
       querySnapshot.forEach((doc) => {
         let data = doc.data()
         data.id = doc.id
-        setLiabilityForms([...liabilityForms, data])
+        setLiabilityForms((liabilityForms) => [...liabilityForms, data])
       })
     }
     fetchData().catch(console.error)
