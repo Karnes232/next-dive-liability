@@ -112,9 +112,9 @@ const styles = StyleSheet.create({
     fontFamily: "Times-Roman",
   },
   image: {
-    height:120,
-    width:400,
-    backgroundCOlor: '#5aa6a9',
+    height: 120,
+    width: 400,
+    backgroundCOlor: "#5aa6a9",
   },
   header: {
     fontSize: 12,
@@ -142,7 +142,7 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
   return (
     <Document>
       <Page style={styles.body} wrap>
-      <Text style={styles.title}>
+        <Text style={styles.title}>
           PADI Discover Scuba® Diving Participant Statement
         </Text>
         <View style={styles.informationDiv}>
@@ -181,7 +181,6 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
               Zip Code: {informationState?.zipcode}
             </Text>
           </View>
-          
         </View>
         <Text style={styles.title}>
           Diver Medical | Participant Questionnaire
@@ -268,14 +267,31 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
             </Text>
           </View>
         </View>
-        </Page>
-        <Page style={styles.body} wrap>
+      </Page>
+      <Page style={styles.body} wrap>
         <Text style={styles.title}>
-      Non-Agency Disclosure and Acknowledgment Agreement
+          Non-Agency Disclosure and Acknowledgment Agreement
         </Text>
-      <Text  style={styles.nonDisclosure}>
-          I understand and agree that PADI Members (“Members”), including Mariana Caribbean Sports and/or any individual PADI Instructors and Divemasters associated with the program in which  I am participating, are licensed to use various PADI Trademarks and to conduct PADI training,  but are not agents, employees or franchisees of PADI Americas, Inc, or its parent, subsidiary and affiliated corporations (“PADI”). I further understand that Member business activities are independent and are neither owned nor operated by PADI, and that while PADI establishes  the standards for PADI diver training programs, it is not responsible for, nor does it have the  right to control, the operation of the Members’ business activities and the day-to-day conduct  of PADI programs and supervision of divers by the Members or their associated staff. I further  understand and agree on behalf of myself, my heirs and my estate that in the event of an injury  or death during this activity, neither I nor my estate shall seek to hold PADI liable for the actions,  inactions or negligence of Mariana Caribbean Sports and/or the instructors and divemasters associated with the activity.
-          </Text>
+        <Text style={styles.nonDisclosure}>
+          I understand and agree that PADI Members (“Members”), including
+          Mariana Caribbean Sports and/or any individual PADI Instructors and
+          Divemasters associated with the program in which I am participating,
+          are licensed to use various PADI Trademarks and to conduct PADI
+          training, but are not agents, employees or franchisees of PADI
+          Americas, Inc, or its parent, subsidiary and affiliated corporations
+          (“PADI”). I further understand that Member business activities are
+          independent and are neither owned nor operated by PADI, and that while
+          PADI establishes the standards for PADI diver training programs, it is
+          not responsible for, nor does it have the right to control, the
+          operation of the Members’ business activities and the day-to-day
+          conduct of PADI programs and supervision of divers by the Members or
+          their associated staff. I further understand and agree on behalf of
+          myself, my heirs and my estate that in the event of an injury or death
+          during this activity, neither I nor my estate shall seek to hold PADI
+          liable for the actions, inactions or negligence of Mariana Caribbean
+          Sports and/or the instructors and divemasters associated with the
+          activity.
+        </Text>
         <Text style={styles.title}>
           Diver Medical | Participant Questionnaire Continued
         </Text>
@@ -616,7 +632,8 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
                   disease (GERD).
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                  Active or uncontrolled ulcerative colitis or Crohn&apos;s disease.
+                  Active or uncontrolled ulcerative colitis or Crohn&apos;s
+                  disease.
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
                   Bariatric surgery within the last 12 months.
@@ -650,58 +667,112 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
         ) : (
           <></>
         )}
-
-        
       </Page>
       <Page style={styles.body} wrap>
-      
-          <Text style={styles.title}>
+        <Text style={styles.title}>
           Liability Release and Assumption of Risk Agreement
         </Text>
-        <Text  style={styles.nonDisclosure}>
-        I, {informationState?.firstName} {informationState?.lastName}, hereby affirm that I aware that skin and scuba diving have inherent risks which may result in serious injury or death.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I understand that diving with compressed air involves certain inherent risks; decompression sickness, embolism or other hyperbaric injuries can occur that require treatment in a recompression chamber. I further understand that this program may be conducted at a site that is remote either by time or distance or both, from such a recompression chamber. I still choose to proceed with this program in spite of the absence of a recompression chamber or medical facility in proximity to the dive site.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          The information I have provided about my medical history on the Medical Questionnaire is accurate to the best of my knowledge. I agree to accept responsibility for omissions regarding my failure to disclose any existing or past health conditions.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I understand and agree that neither the dive professionals conducting this program, nor the facility through which this program is offered,Mariana Caribbean Sports, nor PADI Americas, Inc., nor its affiliate or subsidiary corporations, nor any of their respective employees officers, agents or assigns (hereinafter referred to as “Released Parties”) may be held liable or responsible in any way for any injury, death or other damages to me, my family, estate, heirs or assigns that may occur as a result of my participation in this program or as a result of the negligence of the Released Parties, whether passive or active.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          In consideration of being allowed to participate in this program, I hereby personally assume all risks for any harm, injury or damage, whether foreseen or unforeseen, that may befall me while participating in this program, including but not limited to the knowledge development confined water and/or open water activities.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I further release and hold harmless the Discover Scuba Diving program and the Released Parties from any claim or lawsuit by me, my family, estate, heirs or assigns, arising out of my participation in this program.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I further understand that skin diving and scuba diving are physically strenuous activities and that I will be exerting myself during this program and that if I am injured as result of heart attack, panic, hyperventilation, etc., that I expressly assume the risk of said injuries and that I will not hold the Released Parties responsible for the same.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I further state that I am of lawful age and legally competent to sign this Liability Release and Assumption of Risk Agreement, or that I have acquired the written consent of my parent or guardian.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I understand that the terms herein are contractual and not a mere recital and that I have signed this Agreement of my own free act and with the knowledge that I hereby agree to waive my legal rights. I further agree that if any provision of this Agreement is found to be unenforceable or invalid, that provision shall be severed from this Agreement. The remainder of this Agreement will then be construed as though the unenforceable provision had never been contained herein.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I understand and agree that I am not only giving up my right to sue the Released Parties but also any rights my heirs, assigns or beneficiaries may have to sue the Released Parties resulting from my death. I further represent that I have the authority to do so and that my heirs, assigns and beneficiaries will be estopped from claiming otherwise because of my representations to the Released Parties.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I, {informationState?.firstName} {informationState?.lastName}, BY THIS INSTRUMENT DO EXEMPT AND RELEASE THE DIVE PROFESSIONALS CONDUCTING THIS PROGRAM, THE FACILITY THROUGH WHICH THE PROGRAM IS CONDUCTED, AND PADI AMERICAS, INC., AND ALL RELATED ENTITIES AND RELEASED PARTIES AS DEFINED ABOVE FROM ALL LIABILITY OR RESPONSIBILITY WHATSOEVER FOR PERSONAL INJURY, PROPERTY DAMAGE OR WRONGFUL DEATH, HOWEVER CAUSED, INCLUDING BUT NOT LIMITED TO THE NEGLIGENCE OF THE RELEASED PARTIES, WHETHER PASSIVE OR ACTIVE.
-          </Text>
-          <Text  style={styles.nonDisclosure}>
-          I HAVE FULLY INFORMED MYSELF OF THE CONTENTS OF THIS LIABILITY RELEASE AND ASSUMPTION OF RISK AGREEMENT AND NON-AGENCY DISCLOSURE ACKNOWLEDGMENT AGREEMENT BY READING BOTH BEFORE SIGNING BELOW ON BEHALF OF MYSELF AND MY HEIRS AND AFFIRM THE MEDICAL QUESTIONNAIRE IS ACCURATE.
-          </Text>
-          <View style={styles.leftColumnMedical}>
+        <Text style={styles.nonDisclosure}>
+          I, {informationState?.firstName} {informationState?.lastName}, hereby
+          affirm that I aware that skin and scuba diving have inherent risks
+          which may result in serious injury or death.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I understand that diving with compressed air involves certain inherent
+          risks; decompression sickness, embolism or other hyperbaric injuries
+          can occur that require treatment in a recompression chamber. I further
+          understand that this program may be conducted at a site that is remote
+          either by time or distance or both, from such a recompression chamber.
+          I still choose to proceed with this program in spite of the absence of
+          a recompression chamber or medical facility in proximity to the dive
+          site.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          The information I have provided about my medical history on the
+          Medical Questionnaire is accurate to the best of my knowledge. I agree
+          to accept responsibility for omissions regarding my failure to
+          disclose any existing or past health conditions.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I understand and agree that neither the dive professionals conducting
+          this program, nor the facility through which this program is
+          offered,Mariana Caribbean Sports, nor PADI Americas, Inc., nor its
+          affiliate or subsidiary corporations, nor any of their respective
+          employees officers, agents or assigns (hereinafter referred to as
+          “Released Parties”) may be held liable or responsible in any way for
+          any injury, death or other damages to me, my family, estate, heirs or
+          assigns that may occur as a result of my participation in this program
+          or as a result of the negligence of the Released Parties, whether
+          passive or active.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          In consideration of being allowed to participate in this program, I
+          hereby personally assume all risks for any harm, injury or damage,
+          whether foreseen or unforeseen, that may befall me while participating
+          in this program, including but not limited to the knowledge
+          development confined water and/or open water activities.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I further release and hold harmless the Discover Scuba Diving program
+          and the Released Parties from any claim or lawsuit by me, my family,
+          estate, heirs or assigns, arising out of my participation in this
+          program.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I further understand that skin diving and scuba diving are physically
+          strenuous activities and that I will be exerting myself during this
+          program and that if I am injured as result of heart attack, panic,
+          hyperventilation, etc., that I expressly assume the risk of said
+          injuries and that I will not hold the Released Parties responsible for
+          the same.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I further state that I am of lawful age and legally competent to sign
+          this Liability Release and Assumption of Risk Agreement, or that I
+          have acquired the written consent of my parent or guardian.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I understand that the terms herein are contractual and not a mere
+          recital and that I have signed this Agreement of my own free act and
+          with the knowledge that I hereby agree to waive my legal rights. I
+          further agree that if any provision of this Agreement is found to be
+          unenforceable or invalid, that provision shall be severed from this
+          Agreement. The remainder of this Agreement will then be construed as
+          though the unenforceable provision had never been contained herein.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I understand and agree that I am not only giving up my right to sue
+          the Released Parties but also any rights my heirs, assigns or
+          beneficiaries may have to sue the Released Parties resulting from my
+          death. I further represent that I have the authority to do so and that
+          my heirs, assigns and beneficiaries will be estopped from claiming
+          otherwise because of my representations to the Released Parties.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I, {informationState?.firstName} {informationState?.lastName}, BY THIS
+          INSTRUMENT DO EXEMPT AND RELEASE THE DIVE PROFESSIONALS CONDUCTING
+          THIS PROGRAM, THE FACILITY THROUGH WHICH THE PROGRAM IS CONDUCTED, AND
+          PADI AMERICAS, INC., AND ALL RELATED ENTITIES AND RELEASED PARTIES AS
+          DEFINED ABOVE FROM ALL LIABILITY OR RESPONSIBILITY WHATSOEVER FOR
+          PERSONAL INJURY, PROPERTY DAMAGE OR WRONGFUL DEATH, HOWEVER CAUSED,
+          INCLUDING BUT NOT LIMITED TO THE NEGLIGENCE OF THE RELEASED PARTIES,
+          WHETHER PASSIVE OR ACTIVE.
+        </Text>
+        <Text style={styles.nonDisclosure}>
+          I HAVE FULLY INFORMED MYSELF OF THE CONTENTS OF THIS LIABILITY RELEASE
+          AND ASSUMPTION OF RISK AGREEMENT AND NON-AGENCY DISCLOSURE
+          ACKNOWLEDGMENT AGREEMENT BY READING BOTH BEFORE SIGNING BELOW ON
+          BEHALF OF MYSELF AND MY HEIRS AND AFFIRM THE MEDICAL QUESTIONNAIRE IS
+          ACCURATE.
+        </Text>
+        <View style={styles.leftColumnMedical}>
           <Image
-          src={signature}
-          source={signature}
-          alt='Signature'
-          style={styles.image}
-           />
-           </View>
+            src={signature}
+            source={signature}
+            alt="Signature"
+            style={styles.image}
+          />
+        </View>
       </Page>
     </Document>
   )

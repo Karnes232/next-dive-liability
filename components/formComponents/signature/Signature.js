@@ -7,7 +7,11 @@ const Signature = ({ sigCanvas, signatureMissing }) => {
         <SignatureCanvas
           penColor="black"
           ref={sigCanvas}
-          canvasProps={{ width: "", height: "", className: "sigCanvas w-full h-full" }}
+          canvasProps={{
+            width: "",
+            height: "",
+            className: "sigCanvas w-full h-full",
+          }}
         />
       </div>
       {signatureMissing && (

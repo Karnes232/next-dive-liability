@@ -15,7 +15,8 @@ import { formValidation } from "./formValidation"
 import axios from "axios"
 import { BlobProvider, pdf } from "@react-pdf/renderer"
 import PDFFile from "../pdfComponent/PDFFile"
-
+import addData from "@/Firebase/addData"
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
   const [signatureMissing, setSignatureMissing] = useState(false)
@@ -30,7 +31,6 @@ const FormComponent = () => {
 
   const createPdf = async signature => {
     let file = null
-    console.log(signature)
     const generatePdfDocument = async fileName => {
       const blob = await pdf(
         <PDFFile
@@ -38,9 +38,16 @@ const FormComponent = () => {
           medicalState={medicalState}
           signature={signature}
         />,
-      )
-        .toBlob()
-        FileSaver.saveAs(blob, fileName);
+      ).toBlob()
+      const storage = getStorage()
+      const storageRef = ref(storage, fileName)
+      uploadBytes(storageRef, blob).then(snapshot => {
+        console.log("Uploaded a blob or file!")
+        getDownloadURL(snapshot.ref).then((downloadURL) => {
+          addData('liability', `${informationState.lastName} - ${informationState.firstName}`, {url: downloadURL})
+        })
+      })
+      FileSaver.saveAs(blob, fileName)
     }
     const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
@@ -56,7 +63,7 @@ const FormComponent = () => {
     if (isEmpty === false) {
       signatureImage = sigCanvas.current
         .getTrimmedCanvas()
-        .toDataURL("image/jpg", {crossOrigin: 'anonymous'} )
+        .toDataURL("image/jpg", { crossOrigin: "anonymous" })
       setSignatureMissing(false)
       if (notValid === false) {
         createPdf(signatureImage)
@@ -108,7 +115,6 @@ const FormComponent = () => {
         >
           Submit
         </button>
-       
       </div>
     </form>
   )
