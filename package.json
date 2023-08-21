@@ -23,7 +23,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "react-signature-canvas": "^1.0.6",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
     "prettier": "3.0.2"

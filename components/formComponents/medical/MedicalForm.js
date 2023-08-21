@@ -7,7 +7,7 @@ import {
   medicalQuestions,
 } from "../../../data/medicalStatement"
 import MedicalCard from "./MedicalCard"
-const MedicalForm = ({ medicalState, setMedicalState }) => {
+const MedicalForm = ({ medicalState, setMedicalState, errors }) => {
   const [readMoreMedicalStatement, setReadMoreMedicalStatement] =
     useState(false)
   const [readMoreForm, setReadMoreForm] = useState(false)
@@ -33,6 +33,11 @@ const MedicalForm = ({ medicalState, setMedicalState }) => {
           Diver Medical Participant Questionnaire
         </div>
       </div>
+      {errors && (
+        <div className="p-2 bg-yellow-300">
+          Medical Questionnaire Is Required
+        </div>
+      )}
       {readMoreForm ? (
         <div className="mt-2">
           <section className="m-2 block bg-white border border-gray-200 rounded-lg shadow">

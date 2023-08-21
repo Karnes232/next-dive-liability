@@ -30,7 +30,9 @@ const InformationForm = ({ informationState, setInformationState, errors }) => {
         </div>
       </div>
       {errors && (
-        <div className="p-2 bg-yellow-300">This field is required</div>
+        <div className="p-2 bg-yellow-300">
+          Participant Information Is Required
+        </div>
       )}
       {readMore ? (
         <>

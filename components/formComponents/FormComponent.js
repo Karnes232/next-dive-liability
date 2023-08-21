@@ -12,13 +12,15 @@ import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
 import { formValidation } from "./formValidation"
-import axios from "axios"
+import uniqid from 'uniqid';
 import { BlobProvider, pdf } from "@react-pdf/renderer"
 import PDFFile from "../pdfComponent/PDFFile"
 import addData from "@/Firebase/addData"
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
+import { medicalValidation } from "./medicalValidation"
 const FormComponent = () => {
   const [informationError, setInformationError] = useState(false)
+  const [medicalError, setMedicalError] = useState(false)
   const [signatureMissing, setSignatureMissing] = useState(false)
   const [medicalState, setMedicalState] = useState(medicalStateObject)
   const [informationState, setInformationState] = useState(
@@ -44,8 +46,12 @@ const FormComponent = () => {
       const storageRef = ref(storage, fileName)
       uploadBytes(storageRef, blob).then(snapshot => {
         console.log("Uploaded a blob or file!")
-        getDownloadURL(snapshot.ref).then((downloadURL) => {
-          addData('liability', `${informationState.lastName} - ${informationState.firstName}`, {url: downloadURL, created: today })
+        getDownloadURL(snapshot.ref).then(downloadURL => {
+          addData(
+            "liability",
+            uniqid(),
+            { url: downloadURL, created: today, name: `${informationState.lastName}, ${informationState.firstName}` },
+          )
         })
       })
       FileSaver.saveAs(blob, fileName)
@@ -59,6 +65,7 @@ const FormComponent = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     const notValid = await formValidation(informationState)
+    const medicalNotValid = medicalValidation(medicalState)
     const isEmpty = sigCanvas.current.isEmpty()
     let signatureImage = ""
     if (isEmpty === false) {
@@ -66,13 +73,22 @@ const FormComponent = () => {
         .getTrimmedCanvas()
         .toDataURL("image/jpg", { crossOrigin: "anonymous" })
       setSignatureMissing(false)
-      if (notValid === false) {
+      if (notValid === false && medicalNotValid === false) {
         createPdf(signatureImage)
         console.log("Winner")
         setInformationError(false)
-      } else {
+        setMedicalError(false)
+      } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      } else if (medicalNotValid !== false) {
+        console.log("Medical Information Missing")
+        setInformationError(false)
+        setMedicalError(true)
         window.scrollTo({
           top: 0,
           behavior: "smooth",
@@ -102,6 +118,7 @@ const FormComponent = () => {
       <MedicalForm
         medicalState={medicalState}
         setMedicalState={setMedicalState}
+        errors={medicalError}
       />
       <DiscoverNonDiscloure />
       <DiscoverLiability
