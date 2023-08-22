@@ -33,7 +33,7 @@ const View = () => {
         const newDate = new Date(form.created.seconds * 1000)
 
         return (
-          <div key={index} className="flex w-full space-x-16 h-7 my-1 mx-5">
+          <div key={index} className="flex w-full space-x-16 h-7 my-1 mx-2">
             <div className="w-24">
               {newDate.getDate()} - {newDate.getMonth() + 1} -{" "}
               {newDate.getFullYear()}
