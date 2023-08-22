@@ -12,7 +12,7 @@ import DiscoverNonDiscloure from "./liability/DiscoverNonDiscloure"
 import DiscoverLiability from "./liability/DiscoverLiability"
 import Signature from "./signature/Signature"
 import { formValidation } from "./formValidation"
-import uniqid from 'uniqid';
+import uniqid from "uniqid"
 import { BlobProvider, pdf } from "@react-pdf/renderer"
 import PDFFile from "../pdfComponent/PDFFile"
 import addData from "@/Firebase/addData"
@@ -50,11 +50,11 @@ const FormComponent = () => {
       uploadBytes(storageRef, blob).then(snapshot => {
         console.log("Uploaded a blob or file!")
         getDownloadURL(snapshot.ref).then(downloadURL => {
-          addData(
-            "liability",
-            `${informationState.lastName} - ${uniqid()}`,
-            { url: downloadURL, created: today, name: `${informationState.lastName}, ${informationState.firstName}` },
-          )
+          addData("liability", `${informationState.lastName} - ${uniqid()}`, {
+            url: downloadURL,
+            created: today,
+            name: `${informationState.lastName}, ${informationState.firstName}`,
+          })
         })
       })
       FileSaver.saveAs(blob, fileName)
@@ -62,7 +62,6 @@ const FormComponent = () => {
     const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
     generatePdfDocument(fileName)
-    
   }
 
   let sigCanvas = useRef()

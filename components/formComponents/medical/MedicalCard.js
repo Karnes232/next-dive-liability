@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import SecondaryMedical from "./SecondaryMedical"
 
-const MedicalCard = ({ question, handleChange }) => {
+const MedicalCard = ({ question, handleChange, state, medicalState }) => {
   const [yes, setYes] = useState(false)
   const handleSelect = e => {
     handleChange(e)
@@ -11,7 +11,15 @@ const MedicalCard = ({ question, handleChange }) => {
       setYes(false)
     }
   }
-
+  let defaultYes = undefined
+  let defaultNo = undefined
+  if (state.key === "Yes") {
+    defaultYes = true
+    defaultNo = false
+  } else {
+    defaultYes = false
+    defaultNo = true
+  }
   return (
     <>
       <div className="border-b">
@@ -26,6 +34,7 @@ const MedicalCard = ({ question, handleChange }) => {
                 name={`${question.Id}`}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                 onChange={handleSelect}
+                defaultChecked={defaultYes}
               />
               <label
                 htmlFor={`${question.Id}`}
@@ -43,6 +52,7 @@ const MedicalCard = ({ question, handleChange }) => {
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                 onChange={handleSelect}
                 required
+                defaultChecked={defaultNo}
               />
               <label
                 htmlFor={`${question.Id}`}
@@ -56,11 +66,20 @@ const MedicalCard = ({ question, handleChange }) => {
       </div>
       {yes ? (
         question.secondaryQuestions.map((question, index) => {
+          let state = {}
+
+          for (const [key, value] of Object.entries(medicalState)) {
+            if (key === question.Id) {
+              state = { key: value }
+            }
+          }
+          console.log(state)
           return (
             <SecondaryMedical
               key={index}
               question={question}
               handleChange={handleChange}
+              state={state}
             />
           )
         })

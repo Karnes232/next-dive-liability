@@ -1,6 +1,15 @@
 import React from "react"
 
-const SecondaryMedical = ({ question, handleChange }) => {
+const SecondaryMedical = ({ question, handleChange, state }) => {
+  let defaultYes = undefined
+  let defaultNo = undefined
+  if (state.key === "Yes") {
+    defaultYes = true
+    defaultNo = false
+  } else {
+    defaultYes = false
+    defaultNo = true
+  }
   return (
     <>
       <div className="border-b ml-5">
@@ -15,6 +24,7 @@ const SecondaryMedical = ({ question, handleChange }) => {
                 name={`${question.Id}`}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                 onChange={handleChange}
+                defaultChecked={defaultYes}
               />
               <label
                 htmlFor={`${question.Id}`}
@@ -31,6 +41,7 @@ const SecondaryMedical = ({ question, handleChange }) => {
                 name={`${question.Id}`}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                 onChange={handleChange}
+                defaultChecked={defaultNo}
               />
               <label
                 htmlFor={`${question.Id}`}

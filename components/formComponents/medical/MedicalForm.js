@@ -78,11 +78,20 @@ const MedicalForm = ({ medicalState, setMedicalState, errors }) => {
           <section className="my-8 mx-2 block bg-white border border-gray-200 rounded-lg shadow">
             <main className="text-xs md:text-sm  flex flex-col">
               {medicalQuestions.map((question, index) => {
+                let state = {}
+
+                for (const [key, value] of Object.entries(medicalState)) {
+                  if (key === question.Id) {
+                    state = { key: value }
+                  }
+                }
                 return (
                   <MedicalCard
                     key={index}
                     question={question}
                     handleChange={handleChange}
+                    state={state}
+                    medicalState={medicalState}
                   />
                 )
               })}
