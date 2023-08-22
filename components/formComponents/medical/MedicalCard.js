@@ -16,8 +16,7 @@ const MedicalCard = ({ question, handleChange, state, medicalState }) => {
   if (state.key === "Yes") {
     defaultYes = true
     defaultNo = false
-    setYes(true)
-  } else {
+  } else if (state.key === "No") {
     defaultYes = false
     defaultNo = true
   }
