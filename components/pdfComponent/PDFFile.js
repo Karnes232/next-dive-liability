@@ -125,12 +125,14 @@ const styles = StyleSheet.create({
   },
   leftColumnEsign: {
     width: 50,
+    
   },
   rightColumnEsign: {
     width: 400,
   },
   eSignContainer: {
-    flexDirection: "row",
+  
+      flexDirection: "row",
   },
   eSignImage: {
     width: 15,
@@ -787,6 +789,14 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
           BEHALF OF MYSELF AND MY HEIRS AND AFFIRM THE MEDICAL QUESTIONNAIRE IS
           ACCURATE.
         </Text>
+        <View style={styles.leftColumnMedical}>
+          <Image
+            src={signature}
+            source={signature}
+            alt="Signature"
+            style={styles.image}
+          />
+        </View>
         <View style={styles.eSignContainer}>
           <View style={styles.leftColumnEsign}>
             <Image
