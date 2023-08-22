@@ -23,10 +23,12 @@ const FormComponent = () => {
   const [informationState, setInformationState] = useState(
     informationStateObject,
   )
+  const [readMoreForm, setReadMoreForm] = useState(false)
 
   let sigCanvas = useRef()
   const handleSubmit = async e => {
     e.preventDefault()
+    setReadMoreForm(false)
     const notValid = await formValidation(informationState)
     const medicalNotValid = medicalValidation(medicalState)
     const isEmpty = sigCanvas.current.isEmpty()
@@ -81,6 +83,8 @@ const FormComponent = () => {
         medicalState={medicalState}
         setMedicalState={setMedicalState}
         errors={medicalError}
+        readMoreForm={readMoreForm}
+        setReadMoreForm={setReadMoreForm}
       />
       <DiscoverNonDiscloure />
       <DiscoverLiability

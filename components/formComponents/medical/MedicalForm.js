@@ -7,10 +7,9 @@ import {
   medicalQuestions,
 } from "../../../data/medicalStatement"
 import MedicalCard from "./MedicalCard"
-const MedicalForm = ({ medicalState, setMedicalState, errors }) => {
+const MedicalForm = ({ medicalState, setMedicalState, errors, readMoreForm, setReadMoreForm }) => {
   const [readMoreMedicalStatement, setReadMoreMedicalStatement] =
     useState(false)
-  const [readMoreForm, setReadMoreForm] = useState(false)
   const handleChange = e => {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value
