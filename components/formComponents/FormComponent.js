@@ -1,5 +1,5 @@
 "use client"
-
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from "react"
 import MedicalForm from "./medical/MedicalForm"
 import InformationForm from "./information/InformationForm"
@@ -24,7 +24,7 @@ const FormComponent = () => {
     informationStateObject,
   )
   const [readMoreForm, setReadMoreForm] = useState(false)
-
+  const router = useRouter();
   let sigCanvas = useRef()
   const handleSubmit = async e => {
     e.preventDefault()
@@ -43,6 +43,11 @@ const FormComponent = () => {
         console.log("Winner")
         setInformationError(false)
         setMedicalError(false)
+        setTimeout(() => {
+          console.log("Pushed")
+          router.push('https://next-dive.netlify.app/');
+        }, 10000);
+        
       } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)
