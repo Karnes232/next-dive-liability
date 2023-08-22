@@ -5,15 +5,15 @@ const ConsentComponent = ({consent, setConsent}) => {
         setConsent(e.target.checked)
     }
   return (
-    <div className="mt-5 flex space-x-2">
+    <div className="mt-5 flex flex-col med:flex-row space-x-2">
       <input
         type="checkbox"
         id="consent"
         name="consent"
-        className="self-start"
+        className="md:self-start"
         onChange={handleChange}
       />
-      <label for="consent" className="text-xs">
+      <label htmlFor="consent" className="text-xs">
         By checking here, you are consenting to the use of your electronic
         signature in lieu of an original signature on paper. You have the right
         to request that you sign a paper copy instead. By checking here, you are
