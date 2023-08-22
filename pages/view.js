@@ -18,11 +18,13 @@ const View = () => {
     fetchData().catch(console.error)
   }, [])
   const sortedDate = liabilityForms.sort((a, b) => b.created - a.created)
-  const filteredData = sortedDate.filter((liability) => {
+  const filteredData = sortedDate.filter(liability => {
     if (searchValue === "") {
       return liability
     } else {
-      return liability.name.toLowerCase().includes(searchValue.toLocaleLowerCase())
+      return liability.name
+        .toLowerCase()
+        .includes(searchValue.toLocaleLowerCase())
     }
   })
 

@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     height: 35,
   },
   nonDisclosure: {
-    fontSize: 10,
+    fontSize: 9,
     marginVertical: 4,
   },
   author: {
@@ -112,9 +112,31 @@ const styles = StyleSheet.create({
     fontFamily: "Times-Roman",
   },
   image: {
-    height: 120,
+    height: 80,
     width: 400,
-    backgroundCOlor: "#5aa6a9",
+    borderBottomWidth: 2,
+    borderBottomColor: "#112131",
+    borderBottomStyle: "solid",
+    paddingBottom: 5,
+  },
+  eSign: {
+    fontSize: 8,
+    marginVertical: 4,
+  },
+  leftColumnEsign: {
+    width: 50,
+  },
+  rightColumnEsign: {
+    width: 400,
+  },
+  eSignContainer: {
+    flexDirection: "row",
+  },
+  eSignImage: {
+    width: 15,
+    height: 15,
+    marginVertical: 12,
+    marginHorizontal: 12,
   },
   header: {
     fontSize: 12,
@@ -765,13 +787,32 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
           BEHALF OF MYSELF AND MY HEIRS AND AFFIRM THE MEDICAL QUESTIONNAIRE IS
           ACCURATE.
         </Text>
-        <View style={styles.leftColumnMedical}>
-          <Image
-            src={signature}
-            source={signature}
-            alt="Signature"
-            style={styles.image}
-          />
+        <View style={styles.eSignContainer}>
+          <View style={styles.leftColumnEsign}>
+            <Image
+              src="https://static-00.iconduck.com/assets.00/checkmark-icon-2048x1708-h04h2jee.png"
+              source="https://static-00.iconduck.com/assets.00/checkmark-icon-2048x1708-h04h2jee.png"
+              alt="checkmark"
+              style={styles.eSignImage}
+            />
+          </View>
+          <View style={styles.rightColumnEsign}>
+            <Text style={styles.eSign}>
+              By checking here, you are consenting to the use of your electronic
+              signature in lieu of an original signature on paper. You have the
+              right to request that you sign a paper copy instead. By checking
+              here, you are waiving that right. After consent,you may, upon
+              written request to us, obtain a paper copy of an electronic
+              record. No fee will be charged for such copy and no special
+              hardware or software is required to view it. Your agreement to use
+              an electronic signature with us for any documents will continue
+              until such time as you notify us in writing that you no longer
+              wish to use an electronic signature. There is no penalty for
+              withdrawing your consent. You should always make sure that we have
+              a current email address in order to contact you regarding any
+              changes, if necessary.
+            </Text>
+          </View>
         </View>
       </Page>
     </Document>
