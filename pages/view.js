@@ -34,12 +34,12 @@ const View = () => {
 
         return (
           <div key={index} className="flex w-full space-x-16 h-7 my-1 mx-2">
-            <div className="w-24">
+            <div className="w-28">
               {newDate.getDate()} - {newDate.getMonth() + 1} -{" "}
               {newDate.getFullYear()}
             </div>
             <a href={form.url}>
-              <div className="w-56">{form.name}</div>
+              <div className="">{form.name}</div>
             </a>
           </div>
         )
