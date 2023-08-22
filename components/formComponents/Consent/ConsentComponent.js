@@ -5,12 +5,12 @@ const ConsentComponent = ({consent, setConsent}) => {
         setConsent(e.target.checked)
     }
   return (
-    <div className="mt-5 flex flex-col med:flex-row space-x-2">
+    <div className="mt-5 flex max-w-xs md:max-w-2xl mx-auto space-x-2">
       <input
         type="checkbox"
         id="consent"
         name="consent"
-        className="md:self-start"
+        className="self-start"
         onChange={handleChange}
       />
       <label htmlFor="consent" className="text-xs">
