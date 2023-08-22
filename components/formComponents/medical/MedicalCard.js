@@ -51,7 +51,6 @@ const MedicalCard = ({ question, handleChange, state, medicalState }) => {
                 name={`${question.Id}`}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                 onChange={handleSelect}
-                required
                 defaultChecked={defaultNo}
               />
               <label
