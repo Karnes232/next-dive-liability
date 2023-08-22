@@ -16,9 +16,11 @@ const MedicalCard = ({ question, handleChange, state, medicalState }) => {
   if (state.key === "Yes") {
     defaultYes = true
     defaultNo = false
+    setYes(true)
   } else {
     defaultYes = false
     defaultNo = true
+    setYes(true)
   }
   return (
     <>
@@ -73,7 +75,6 @@ const MedicalCard = ({ question, handleChange, state, medicalState }) => {
               state = { key: value }
             }
           }
-          console.log(state)
           return (
             <SecondaryMedical
               key={index}
