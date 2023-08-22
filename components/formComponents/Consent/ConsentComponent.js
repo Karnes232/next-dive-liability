@@ -1,19 +1,20 @@
 import React from "react"
 
-const ConsentComponent = ({consent, setConsent}) => {
-    const handleChange = (e) => {
-        setConsent(e.target.checked)
-    }
+const ConsentComponent = ({ consent, setConsent }) => {
+  const handleChange = e => {
+    setConsent(e.target.checked)
+  }
   return (
     <div className="mt-5 flex space-x-2">
-    <div >
-      <input
-        type="checkbox"
-        id="consent"
-        name="consent"
-        className="w-4"
-        onChange={handleChange}
-      /></div>
+      <div>
+        <input
+          type="checkbox"
+          id="consent"
+          name="consent"
+          className="w-4"
+          onChange={handleChange}
+        />
+      </div>
       <label htmlFor="consent" className="text-xs">
         By checking here, you are consenting to the use of your electronic
         signature in lieu of an original signature on paper. You have the right

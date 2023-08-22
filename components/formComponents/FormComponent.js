@@ -88,7 +88,7 @@ const FormComponent = () => {
         lastName={informationState.lastName}
       />
       <Signature sigCanvas={sigCanvas} signatureMissing={signatureMissing} />
-      <ConsentComponent consent={consent} setConsent={setConsent}/>
+      <ConsentComponent consent={consent} setConsent={setConsent} />
       <div className="flex mt-10 justify-center items-center">
         <button
           type="submit"
