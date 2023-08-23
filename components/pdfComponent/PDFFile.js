@@ -112,12 +112,13 @@ const styles = StyleSheet.create({
     fontFamily: "Times-Roman",
   },
   image: {
-    height: 80,
-    width: 400,
+    height: 100,
+    width: 200,
     borderBottomWidth: 2,
     borderBottomColor: "#112131",
     borderBottomStyle: "solid",
     paddingBottom: 5,
+    paddingLeft: 20,
   },
   eSign: {
     fontSize: 8,

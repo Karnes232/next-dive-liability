@@ -35,7 +35,6 @@ const FormComponent = () => {
     let signatureImage = ""
     if (isEmpty === false) {
       signatureImage = sigCanvas.current
-        .getTrimmedCanvas()
         .toDataURL("image/jpg", { crossOrigin: "anonymous" })
       setSignatureMissing(false)
       if (notValid === false && medicalNotValid === false) {
