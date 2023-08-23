@@ -4,6 +4,8 @@ import addData from "./addData"
 import uniqid from "uniqid"
 import * as FileSaver from "file-saver"
 import { pdf } from "@react-pdf/renderer"
+const { detect } = require('detect-browser');
+const browser = detect();
 export default async function createPdf(
   informationState,
   medicalState,
@@ -31,7 +33,10 @@ export default async function createPdf(
         })
       })
     })
-    FileSaver.saveAs(blob, fileName)
+    if (browser.name !== 'ios') {
+      FileSaver.saveAs(blob, fileName)
+    }
+    
   }
   const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
