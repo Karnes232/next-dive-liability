@@ -45,7 +45,7 @@ const FormComponent = () => {
         setMedicalError(false)
         setTimeout(() => {
           console.log("Pushed")
-          router.push('https://next-dive.netlify.app/');
+          router.push('https://next-dive.netlify.app/view');
         }, 10000);
         
       } else if (notValid !== false) {
