@@ -1,13 +1,16 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs"
 
+
+const imageMimeType = /image\/(png|jpg|jpeg)/i;
 const CertifiedInformation = ({
   certifiedState,
   setCertifiedState,
   errors,
 }) => {
   const [readMore, setReadMore] = useState(false)
-
+  const [file, setFile] = useState(null);
+  const [fileDataURL, setFileDataURL] = useState(null);
   const handleChange = e => {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value
@@ -16,6 +19,41 @@ const CertifiedInformation = ({
       [e.target.name]: value,
     })
   }
+
+  const imageChangeHandler = (e) => {
+    const file = e.target.files[0];
+    if (!file.type.match(imageMimeType)) {
+      alert("Image mime type is not valid");
+      return;
+    }
+    setFile(file);
+    setCertifiedState({
+        ...certifiedState,
+        certImage: file,
+      })
+  }
+
+  useEffect(() => {
+    let fileReader, isCancel = false;
+    if (file) {
+      fileReader = new FileReader();
+      fileReader.onload = (e) => {
+        const { result } = e.target;
+        if (result && !isCancel) {
+          setFileDataURL(result)
+        }
+      }
+      fileReader.readAsDataURL(file);
+    }
+    return () => {
+      isCancel = true;
+      if (fileReader && fileReader.readyState === 1) {
+        fileReader.abort();
+      }
+    }
+
+  }, [file]);
+
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
@@ -95,12 +133,20 @@ const CertifiedInformation = ({
                   accept="image/*"
                   placeholder=" "
                   required
-                  // onChange={handleChange}
+                  onChange={imageChangeHandler}
                 />
                 <label htmlFor="certImage" className="contactFormLabel">
                   Upload Certification
                 </label>
               </div>
+            </div>
+            <div>
+            {fileDataURL ?
+        <p className="img-preview-wrapper">
+          {
+            <img src={fileDataURL} alt="preview" />
+          }
+        </p> : null}
             </div>
           </section>
         </>

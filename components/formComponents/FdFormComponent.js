@@ -75,6 +75,8 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
       console.log("Signature Missing")
     }
   }
+
+  console.log(certifiedState)
   return (
     <form
       name="contact"
