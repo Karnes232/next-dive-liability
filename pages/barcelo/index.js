@@ -11,7 +11,7 @@ const index = () => {
           link="/barcelo/dsd"
         />
         <LiabilitySelectButton
-          name="Certifed Diver"
+          name="Certified Diver"
           link="/barcelo/certified"
         />
         <LiabilitySelectButton
