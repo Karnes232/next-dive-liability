@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs"
 
-
-const imageMimeType = /image\/(png|jpg|jpeg)/i;
+const imageMimeType = /image\/(png|jpg|jpeg)/i
 const CertifiedInformation = ({
   certifiedState,
   setCertifiedState,
   errors,
 }) => {
   const [readMore, setReadMore] = useState(false)
-  const [file, setFile] = useState(null);
-  const [fileDataURL, setFileDataURL] = useState(null);
+  const [file, setFile] = useState(null)
+  const [fileDataURL, setFileDataURL] = useState(null)
   const handleChange = e => {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value
@@ -20,39 +19,39 @@ const CertifiedInformation = ({
     })
   }
 
-  const imageChangeHandler = (e) => {
-    const file = e.target.files[0];
+  const imageChangeHandler = e => {
+    const file = e.target.files[0]
     if (!file.type.match(imageMimeType)) {
-      alert("Image mime type is not valid");
-      return;
+      alert("Image mime type is not valid")
+      return
     }
-    setFile(file);
+    setFile(file)
     setCertifiedState({
-        ...certifiedState,
-        certImage: file,
-      })
+      ...certifiedState,
+      certImage: file,
+    })
   }
 
   useEffect(() => {
-    let fileReader, isCancel = false;
+    let fileReader,
+      isCancel = false
     if (file) {
-      fileReader = new FileReader();
-      fileReader.onload = (e) => {
-        const { result } = e.target;
+      fileReader = new FileReader()
+      fileReader.onload = e => {
+        const { result } = e.target
         if (result && !isCancel) {
           setFileDataURL(result)
         }
       }
-      fileReader.readAsDataURL(file);
+      fileReader.readAsDataURL(file)
     }
     return () => {
-      isCancel = true;
+      isCancel = true
       if (fileReader && fileReader.readyState === 1) {
-        fileReader.abort();
+        fileReader.abort()
       }
     }
-
-  }, [file]);
+  }, [file])
 
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
@@ -75,7 +74,7 @@ const CertifiedInformation = ({
       )}
       {readMore ? (
         <>
-          <section className="p-5">
+          <section className="p-5 pt-10">
             <div className="flex justify-between">
               <div className="relative z-0 mb-6 w-2/5 group">
                 <input
@@ -125,28 +124,40 @@ const CertifiedInformation = ({
                 </label>
               </div>
               <div className="relative z-0 mb-6 w-2/5 group">
-                <input
-                  type="file"
-                  name="certImage"
-                  id="certImage"
-                  className="contactFormInput peer"
-                  accept="image/*"
-                  placeholder=" "
-                  required
-                  onChange={imageChangeHandler}
-                />
-                <label htmlFor="certImage" className="contactFormLabel">
-                  Upload Certification
+                <label
+                  for="dropzone-file"
+                  className="flex flex-col items-center justify-center w-full h-8 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800  hover:bg-gray-100 "
+                >
+                  <svg
+                    className="w-8 h-8 my-2 text-gray-500 "
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 16"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                    />
+                  </svg>
                 </label>
+                <div className="flex flex-col items-center justify-center">
+                  <p className="mb-2 text-sm text-gray-500">
+                    <span className="">Upload Certification</span>
+                  </p>
+                </div>
+                <input id="dropzone-file" type="file" class="hidden" />
               </div>
             </div>
             <div>
-            {fileDataURL ?
-        <p className="img-preview-wrapper">
-          {
-            <img src={fileDataURL} alt="preview" />
-          }
-        </p> : null}
+              {fileDataURL ? (
+                <p className="img-preview-wrapper">
+                  {<img src={fileDataURL} alt="preview" />}
+                </p>
+              ) : null}
             </div>
           </section>
         </>
