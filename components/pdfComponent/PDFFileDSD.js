@@ -696,9 +696,12 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
           Liability Release and Assumption of Risk Agreement
         </Text>
         <Text style={styles.nonDisclosure}>
-          I, <Text style={{ fontFamily: 'Times-Italic' }}>{informationState?.firstName} {informationState?.lastName}</Text>, hereby
-          affirm that I aware that skin and scuba diving have inherent risks
-          which may result in serious injury or death.
+          I,{" "}
+          <Text style={{ fontFamily: "Times-Italic" }}>
+            {informationState?.firstName} {informationState?.lastName}
+          </Text>
+          , hereby affirm that I aware that skin and scuba diving have inherent
+          risks which may result in serious injury or death.
         </Text>
         <Text style={styles.nonDisclosure}>
           I understand that diving with compressed air involves certain inherent
@@ -772,14 +775,17 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
           otherwise because of my representations to the Released Parties.
         </Text>
         <Text style={styles.nonDisclosure}>
-          I, <Text style={{ fontFamily: 'Times-Italic' }}>{informationState?.firstName} {informationState?.lastName}</Text>, BY THIS
-          INSTRUMENT DO EXEMPT AND RELEASE THE DIVE PROFESSIONALS CONDUCTING
-          THIS PROGRAM, THE FACILITY THROUGH WHICH THE PROGRAM IS CONDUCTED, AND
-          PADI AMERICAS, INC., AND ALL RELATED ENTITIES AND RELEASED PARTIES AS
-          DEFINED ABOVE FROM ALL LIABILITY OR RESPONSIBILITY WHATSOEVER FOR
-          PERSONAL INJURY, PROPERTY DAMAGE OR WRONGFUL DEATH, HOWEVER CAUSED,
-          INCLUDING BUT NOT LIMITED TO THE NEGLIGENCE OF THE RELEASED PARTIES,
-          WHETHER PASSIVE OR ACTIVE.
+          I,{" "}
+          <Text style={{ fontFamily: "Times-Italic" }}>
+            {informationState?.firstName} {informationState?.lastName}
+          </Text>
+          , BY THIS INSTRUMENT DO EXEMPT AND RELEASE THE DIVE PROFESSIONALS
+          CONDUCTING THIS PROGRAM, THE FACILITY THROUGH WHICH THE PROGRAM IS
+          CONDUCTED, AND PADI AMERICAS, INC., AND ALL RELATED ENTITIES AND
+          RELEASED PARTIES AS DEFINED ABOVE FROM ALL LIABILITY OR RESPONSIBILITY
+          WHATSOEVER FOR PERSONAL INJURY, PROPERTY DAMAGE OR WRONGFUL DEATH,
+          HOWEVER CAUSED, INCLUDING BUT NOT LIMITED TO THE NEGLIGENCE OF THE
+          RELEASED PARTIES, WHETHER PASSIVE OR ACTIVE.
         </Text>
         <Text style={styles.nonDisclosure}>
           I HAVE FULLY INFORMED MYSELF OF THE CONTENTS OF THIS LIABILITY RELEASE

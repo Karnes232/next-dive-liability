@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   rightColumnSmall: {
-flexDirection: "column",
+    flexDirection: "column",
     width: 570,
     paddingTop: 15,
     paddingRight: 15,

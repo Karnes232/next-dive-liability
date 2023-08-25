@@ -18,6 +18,8 @@ import InformationForm from "./information/InformationForm"
 import CertifiedInformation from "./Certified/CertifiedInformation"
 import { certInfoValidation } from "./certInfoValidation"
 import createCertPdf from "@/Firebase/createCertPdf"
+import DiverActivitiesLiability from "./liability/DiverActivitiesLiability"
+import StandardSafeDiving from "./liability/StandardSafeDiving"
 const FdFormComponent = ({ hotel, liabilityLocation }) => {
   const [informationError, setInformationError] = useState(false)
   const [consent, setConsent] = useState(false)
@@ -126,7 +128,12 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
         setReadMoreForm={setReadMoreForm}
       />
       <DiscoverNonDiscloure />
-      <DiscoverLiability
+      
+      <StandardSafeDiving
+        firstName={informationState.firstName}
+        lastName={informationState.lastName}
+      />
+      <DiverActivitiesLiability
         firstName={informationState.firstName}
         lastName={informationState.lastName}
       />

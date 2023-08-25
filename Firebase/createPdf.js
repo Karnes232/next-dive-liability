@@ -42,7 +42,9 @@ export default async function createPdf(
       FileSaver.saveAs(blob, fileName)
     }
   }
-  const fileName = `${informationState.lastName} - ${informationState.firstName} - liability - ${uniqid()}.pdf`
+  const fileName = `${informationState.lastName} - ${
+    informationState.firstName
+  } - liability - ${uniqid()}.pdf`
 
   generatePdfDocument(fileName)
 }
