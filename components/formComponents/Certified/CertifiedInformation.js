@@ -149,7 +149,7 @@ const CertifiedInformation = ({
                     <span className="">Upload Certification</span>
                   </p>
                 </div>
-                <input id="dropzone-file" type="file" class="hidden" />
+                <input id="dropzone-file" type="file" class="hidden" onChange={imageChangeHandler} />
               </div>
             </div>
             <div>
