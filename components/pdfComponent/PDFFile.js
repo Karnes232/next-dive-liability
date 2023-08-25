@@ -126,14 +126,12 @@ const styles = StyleSheet.create({
   },
   leftColumnEsign: {
     width: 50,
-    
   },
   rightColumnEsign: {
     width: 400,
   },
   eSignContainer: {
-  
-      flexDirection: "row",
+    flexDirection: "row",
   },
   eSignImage: {
     width: 15,

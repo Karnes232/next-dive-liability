@@ -1,8 +1,7 @@
 "use client"
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router"
 import React, { useEffect, useRef, useState } from "react"
 import MedicalForm from "./medical/MedicalForm"
-import InformationForm from "./information/InformationForm"
 import {
   informationStateObject,
   medicalStateObject,
@@ -14,17 +13,20 @@ import { formValidation } from "./formValidation"
 import { medicalValidation } from "./medicalValidation"
 import createPdf from "@/Firebase/createPdf"
 import ConsentComponent from "./Consent/ConsentComponent"
-const FormComponent = () => {
+import InformationForm from "./information/InformationForm"
+import CertifiedInformation from "./Certified/CertifiedInformation"
+const FdFormComponent = ({ hotel, liabilityLocation }) => {
   const [informationError, setInformationError] = useState(false)
   const [consent, setConsent] = useState(false)
   const [medicalError, setMedicalError] = useState(false)
   const [signatureMissing, setSignatureMissing] = useState(false)
   const [medicalState, setMedicalState] = useState(medicalStateObject)
+  const [certifiedState, setCertifiedState] = useState({})
   const [informationState, setInformationState] = useState(
     informationStateObject,
   )
   const [readMoreForm, setReadMoreForm] = useState(false)
-  const router = useRouter();
+  const router = useRouter()
   let sigCanvas = useRef()
   const handleSubmit = async e => {
     e.preventDefault()
@@ -34,19 +36,24 @@ const FormComponent = () => {
     const isEmpty = sigCanvas.current.isEmpty()
     let signatureImage = ""
     if (isEmpty === false) {
-      signatureImage = sigCanvas.current
-        .toDataURL("image/jpg", { crossOrigin: "anonymous" })
+      signatureImage = sigCanvas.current.toDataURL("image/jpg", {
+        crossOrigin: "anonymous",
+      })
       setSignatureMissing(false)
       if (notValid === false && medicalNotValid === false) {
-        createPdf(informationState, medicalState, signatureImage)
+        createPdf(
+          informationState,
+          medicalState,
+          signatureImage,
+          liabilityLocation,
+        )
         console.log("Winner")
         setInformationError(false)
         setMedicalError(false)
         setTimeout(() => {
           console.log("Pushed")
-          router.push('https://next-dive.netlify.app/view');
-        }, 10000);
-        
+          router.push("https://next-dive.netlify.app/view")
+        }, 10000)
       } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)
@@ -83,6 +90,12 @@ const FormComponent = () => {
         errors={informationError}
       />
 
+      <CertifiedInformation
+        certifiedState={certifiedState}
+        setCertifiedState={setCertifiedState}
+        errors={false}
+      />
+
       <MedicalForm
         medicalState={medicalState}
         setMedicalState={setMedicalState}
@@ -110,4 +123,4 @@ const FormComponent = () => {
   )
 }
 
-export default FormComponent
+export default FdFormComponent

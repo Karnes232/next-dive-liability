@@ -4,12 +4,13 @@ import addData from "./addData"
 import uniqid from "uniqid"
 import * as FileSaver from "file-saver"
 import { pdf } from "@react-pdf/renderer"
-const { detect } = require('detect-browser');
-const browser = detect();
+const { detect } = require("detect-browser")
+const browser = detect()
 export default async function createPdf(
   informationState,
   medicalState,
   signature,
+  liabilityLocation,
 ) {
   let file = null
   let today = new Date()
@@ -26,17 +27,20 @@ export default async function createPdf(
     uploadBytes(storageRef, blob).then(snapshot => {
       console.log("Uploaded a blob or file!")
       getDownloadURL(snapshot.ref).then(downloadURL => {
-        addData("liability", `${informationState.lastName} - ${uniqid()}`, {
-          url: downloadURL,
-          created: today,
-          name: `${informationState.lastName}, ${informationState.firstName}`,
-        })
+        addData(
+          liabilityLocation,
+          `${informationState.lastName} - ${uniqid()}`,
+          {
+            url: downloadURL,
+            created: today,
+            name: `${informationState.lastName}, ${informationState.firstName}`,
+          },
+        )
       })
     })
-    if (browser.name !== 'ios') {
+    if (browser.name !== "ios") {
       FileSaver.saveAs(blob, fileName)
     }
-    
   }
   const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
 
