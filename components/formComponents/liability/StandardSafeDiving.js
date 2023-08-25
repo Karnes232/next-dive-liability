@@ -24,7 +24,7 @@ const StandardSafeDiving = ({ firstName, lastName }) => {
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        <div>Standard Safe Diving practices Statement of Understanding</div>
+        <div>Standard Safe Diving Practices Statement of Understanding</div>
         <div>
           <div className="pr-1 text-lg">
             {" "}
