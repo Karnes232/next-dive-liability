@@ -1,4 +1,4 @@
-import PDFFile from "@/components/pdfComponent/PDFFile"
+import PDFFileDSD from "@/components/pdfComponent/PDFFileDSD"
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage"
 import addData from "./addData"
 import uniqid from "uniqid"
@@ -16,7 +16,7 @@ export default async function createPdf(
   let today = new Date()
   const generatePdfDocument = async fileName => {
     const blob = await pdf(
-      <PDFFile
+      <PDFFileDSD
         informationState={informationState}
         medicalState={medicalState}
         signature={signature}
@@ -42,7 +42,7 @@ export default async function createPdf(
       FileSaver.saveAs(blob, fileName)
     }
   }
-  const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
+  const fileName = `${informationState.lastName} - ${informationState.firstName} - liability - ${uniqid()}.pdf`
 
   generatePdfDocument(fileName)
 }

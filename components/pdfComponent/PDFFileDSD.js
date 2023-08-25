@@ -161,7 +161,7 @@ Font.register({
   src: "https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf",
 })
 
-const PDFFile = ({ informationState, medicalState, signature }) => {
+const PDFFileDSD = ({ informationState, medicalState, signature }) => {
   return (
     <Document>
       <Page style={styles.body} wrap>
@@ -828,4 +828,4 @@ const PDFFile = ({ informationState, medicalState, signature }) => {
   )
 }
 
-export default PDFFile
+export default PDFFileDSD

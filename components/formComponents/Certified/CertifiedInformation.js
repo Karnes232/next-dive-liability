@@ -41,6 +41,10 @@ const CertifiedInformation = ({
         const { result } = e.target
         if (result && !isCancel) {
           setFileDataURL(result)
+          // setCertifiedState({
+          //   ...certifiedState,
+          //   certImage: result,
+          // })
         }
       }
       fileReader.readAsDataURL(file)
@@ -111,21 +115,21 @@ const CertifiedInformation = ({
               <div className="relative z-0 mb-6 w-2/5 group">
                 <input
                   type="date"
-                  name="depDive"
-                  id="depDive"
+                  name="depDate"
+                  id="depDate"
                   className="contactFormInput peer min-h-[2.8rem]"
                   placeholder=" "
                   required
                   onChange={handleChange}
                   value={certifiedState.depDive}
                 />
-                <label htmlFor="depDive" className="contactFormLabel">
+                <label htmlFor="depDate" className="contactFormLabel">
                   Depature Date
                 </label>
               </div>
               <div className="relative z-0 mb-6 w-2/5 group">
                 <label
-                  for="dropzone-file"
+                  htmlFor="dropzone-file"
                   className="flex flex-col items-center justify-center w-full h-8 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800  hover:bg-gray-100 "
                 >
                   <svg
@@ -137,9 +141,9 @@ const CertifiedInformation = ({
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
                     />
                   </svg>
@@ -149,7 +153,12 @@ const CertifiedInformation = ({
                     <span className="">Upload Certification</span>
                   </p>
                 </div>
-                <input id="dropzone-file" type="file" class="hidden" onChange={imageChangeHandler} />
+                <input
+                  id="dropzone-file"
+                  type="file"
+                  className="hidden"
+                  onChange={imageChangeHandler}
+                />
               </div>
             </div>
             <div>

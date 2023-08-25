@@ -11,6 +11,13 @@ export const informationStateObject = {
   country: "",
 }
 
+export const certifiedStateObject = {
+  lastDive: "",
+  depDate: "",
+  totalDives: "",
+  certImage: null,
+}
+
 export const medicalStateObject = {
   lung: "",
   heartSurgey: "No",

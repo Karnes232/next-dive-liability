@@ -10,6 +10,7 @@ const Header = () => {
         alt="Mariana Caribbean Sports"
         height="100%"
         className="object-contain h-24 md:h-28 lg:h-36"
+        priority
       />
     </div>
   )
