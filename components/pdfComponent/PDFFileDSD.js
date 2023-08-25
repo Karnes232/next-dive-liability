@@ -696,7 +696,7 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
           Liability Release and Assumption of Risk Agreement
         </Text>
         <Text style={styles.nonDisclosure}>
-          I, {informationState?.firstName} {informationState?.lastName}, hereby
+          I, <Text style={{ fontFamily: 'Times-Italic' }}>{informationState?.firstName} {informationState?.lastName}</Text>, hereby
           affirm that I aware that skin and scuba diving have inherent risks
           which may result in serious injury or death.
         </Text>
@@ -772,7 +772,7 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
           otherwise because of my representations to the Released Parties.
         </Text>
         <Text style={styles.nonDisclosure}>
-          I, {informationState?.firstName} {informationState?.lastName}, BY THIS
+          I, <Text style={{ fontFamily: 'Times-Italic' }}>{informationState?.firstName} {informationState?.lastName}</Text>, BY THIS
           INSTRUMENT DO EXEMPT AND RELEASE THE DIVE PROFESSIONALS CONDUCTING
           THIS PROGRAM, THE FACILITY THROUGH WHICH THE PROGRAM IS CONDUCTED, AND
           PADI AMERICAS, INC., AND ALL RELATED ENTITIES AND RELEASED PARTIES AS
