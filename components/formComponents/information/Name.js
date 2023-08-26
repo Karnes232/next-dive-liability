@@ -1,6 +1,8 @@
 import React from "react"
+import { useTranslation } from "react-i18next"
 
 const Name = ({ handleChange, informationState }) => {
+  const { t } = useTranslation()
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -16,7 +18,7 @@ const Name = ({ handleChange, informationState }) => {
           value={informationState.firstName}
         />
         <label htmlFor="firstName" className="contactFormLabel">
-          First Name
+          {t("InformationForm.firstName")}
         </label>
       </div>
       <div className="relative z-0 mb-6 w-full group">
@@ -32,7 +34,7 @@ const Name = ({ handleChange, informationState }) => {
           value={informationState.lastName}
         />
         <label htmlFor="lastName" className="contactFormLabel">
-          Last Name
+          {t("InformationForm.lastName")}
         </label>
       </div>
       <div className="relative z-0 mb-6 w-full group">
@@ -47,7 +49,7 @@ const Name = ({ handleChange, informationState }) => {
           value={informationState.birthdate}
         />
         <label htmlFor="birthdate" className="contactFormLabel">
-          Birthdate
+          {t("InformationForm.birthdate")}
         </label>
       </div>
     </>

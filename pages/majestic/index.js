@@ -1,21 +1,23 @@
 import LiabilitySelectButton from "@/components/hotelSelectButton/LiabilitySelectButton"
 import Layout from "@/components/layout"
 import React from "react"
+import { useTranslation } from "react-i18next"
 
-const index = () => {
+const Index = () => {
+  const { t } = useTranslation()
   return (
     <Layout>
       <main className="min-h-screen flex flex-col justify-center items-center mx-5 lg:w-3/4 max-w-4xl lg:mx-auto">
         <LiabilitySelectButton
-          name="Discover Scuba Diving"
+          name={t("LiabilitySelectButton1")}
           link="/majestic/dsd"
         />
         <LiabilitySelectButton
-          name="Certified Diver"
+          name={t("LiabilitySelectButton2")}
           link="/majestic/certified"
         />
         <LiabilitySelectButton
-          name="Liability Release"
+          name={t("LiabilitySelectButton3")}
           link="/majestic/liability"
         />
       </main>
@@ -23,4 +25,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

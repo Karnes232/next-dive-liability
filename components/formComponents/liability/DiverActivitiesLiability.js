@@ -1,3 +1,4 @@
+import { diveCenter } from "@/data/diveCenter"
 import {
   activitiesRelease1,
   activitiesRelease10,
@@ -14,17 +15,19 @@ import {
   activitiesRelease9,
 } from "@/data/diverActivitiesRelease"
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs"
 
 const DiverActivitiesLiability = ({ firstName, lastName }) => {
   const [readMore, setReadMore] = useState(false)
+  const { t } = useTranslation()
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        <div>Liability Release and Assumption of Risk Agreement</div>
+        <div>{t("DiverActivitiesLiability.title")}</div>
         <div>
           <div className="pr-1 text-lg">
             {" "}
@@ -38,66 +41,58 @@ const DiverActivitiesLiability = ({ firstName, lastName }) => {
             <section className="m-2 block bg-white border border-gray-200 rounded-lg shadow">
               <p className="text-gray-700 text-base m-4">
                 {" "}
-                I,
+                {t("DiverActivitiesLiability.I")},
                 <span className="italic">
                   {" "}
                   {firstName} {lastName}
                 </span>
-                , {activitiesRelease1}
+                , {t("DiverActivitiesLiability.activitiesRelease1")},
               </p>
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease2 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease3 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease4 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease5 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease6 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease7 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease8 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease9 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease10 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease11 }}
-              />
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease2")}{" "}
+                <span class="italic">{diveCenter}</span>,{" "}
+                {t("DiverActivitiesLiability.activitiesRelease3")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease4")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease5")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease6")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease7")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease8")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease9")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease10")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease11")}{" "}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease12")}{" "}
+              </p>
+
               <p className="text-gray-700 text-base m-4">
                 {" "}
-                I,
+                {t("DiverActivitiesLiability.I")},
                 <span className="italic">
                   {" "}
                   {firstName} {lastName}
                 </span>
-                , {activitiesRelease12}
+                , {t("DiverActivitiesLiability.activitiesRelease13")}
               </p>
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: activitiesRelease13 }}
-              />
+              <p className="text-gray-700 text-base m-4">
+                {t("DiverActivitiesLiability.activitiesRelease14")}{" "}
+              </p>
             </section>
           </div>
         </>

@@ -1,6 +1,8 @@
 import React from "react"
+import { useTranslation } from "react-i18next"
 
 const Contact = ({ handleChange, informationState }) => {
+  const { t } = useTranslation()
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -15,7 +17,7 @@ const Contact = ({ handleChange, informationState }) => {
           value={informationState.email}
         />
         <label htmlFor="email" className="contactFormLabel">
-          Email address
+          {t("InformationForm.email")}
         </label>
       </div>
       <div className="relative z-0 mb-6 w-full group">
@@ -29,7 +31,7 @@ const Contact = ({ handleChange, informationState }) => {
           value={informationState.telephone}
         />
         <label htmlFor="telephone" className="contactFormLabel">
-          Enter phone number
+          {t("InformationForm.telephone")}
         </label>
       </div>
     </>

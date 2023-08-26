@@ -4,7 +4,9 @@ import Contact from "./Contact"
 import Address from "./Address"
 import { useState } from "react"
 import { BsArrowsAngleExpand, BsArrowsAngleContract } from "react-icons/bs"
+import { useTranslation } from "react-i18next"
 const InformationForm = ({ informationState, setInformationState, errors }) => {
+  const { t } = useTranslation()
   const [readMore, setReadMore] = useState(false)
   const handleChange = e => {
     const value =
@@ -21,7 +23,7 @@ const InformationForm = ({ informationState, setInformationState, errors }) => {
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        <div>Participant Information</div>
+        <div>{t("InformationForm.title")}</div>
         <div>
           <div className="pr-1 text-lg">
             {" "}
@@ -30,9 +32,7 @@ const InformationForm = ({ informationState, setInformationState, errors }) => {
         </div>
       </div>
       {errors && (
-        <div className="p-2 bg-yellow-300">
-          Participant Information Is Required
-        </div>
+        <div className="p-2 bg-yellow-300">{t("InformationForm.error")}</div>
       )}
       {readMore ? (
         <>

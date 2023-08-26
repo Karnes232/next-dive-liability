@@ -1,7 +1,15 @@
 import React, { useState } from "react"
 import SecondaryMedical from "./SecondaryMedical"
+import { useTranslation } from "react-i18next"
 
-const MedicalCard = ({ question, handleChange, state, medicalState }) => {
+const MedicalCard = ({
+  question,
+  handleChange,
+  state,
+  medicalState,
+  translatedQuestion,
+}) => {
+  const { t } = useTranslation()
   const [yes, setYes] = useState(false)
   const handleSelect = e => {
     handleChange(e)
@@ -24,7 +32,7 @@ const MedicalCard = ({ question, handleChange, state, medicalState }) => {
     <>
       <div className="border-b">
         <div className="flex justify-between m-4">
-          <p className="mr-5 w-56 md:w-96">{question.question}</p>
+          <p className="mr-5 w-56 md:w-96">{translatedQuestion}</p>
           <div className="flex justify-center items-center space-x-3">
             <div className="flex justify-center items-center">
               <input
@@ -78,6 +86,7 @@ const MedicalCard = ({ question, handleChange, state, medicalState }) => {
               question={question}
               handleChange={handleChange}
               state={state}
+              translatedQuestion={t(question.question)}
             />
           )
         })

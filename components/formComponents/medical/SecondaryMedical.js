@@ -1,6 +1,11 @@
 import React from "react"
 
-const SecondaryMedical = ({ question, handleChange, state }) => {
+const SecondaryMedical = ({
+  question,
+  handleChange,
+  state,
+  translatedQuestion,
+}) => {
   let defaultYes = undefined
   let defaultNo = undefined
   if (state.key === "Yes") {
@@ -14,7 +19,7 @@ const SecondaryMedical = ({ question, handleChange, state }) => {
     <>
       <div className="border-b ml-5">
         <div className="flex justify-between m-4">
-          <p className="mr-5 w-56 md:w-96 italic">{question.question}</p>
+          <p className="mr-5 w-56 md:w-96 italic">{translatedQuestion}</p>
           <div className="flex justify-center items-center space-x-3">
             <div className="flex justify-center items-center">
               <input

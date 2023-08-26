@@ -98,7 +98,6 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
       console.log("Signature Missing")
     }
   }
-  console.log(certifiedState)
   return (
     <form
       name="contact"
@@ -128,7 +127,7 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
         setReadMoreForm={setReadMoreForm}
       />
       <DiscoverNonDiscloure />
-      
+
       <StandardSafeDiving
         firstName={informationState.firstName}
         lastName={informationState.lastName}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs"
 
 const imageMimeType = /image\/(png|jpg|jpeg)/i
@@ -7,6 +8,7 @@ const CertifiedInformation = ({
   setCertifiedState,
   errors,
 }) => {
+  const { t } = useTranslation()
   const [readMore, setReadMore] = useState(false)
   const [file, setFile] = useState(null)
   const [fileDataURL, setFileDataURL] = useState(null)
@@ -63,7 +65,7 @@ const CertifiedInformation = ({
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        <div>Certification Information</div>
+        <div>{t("CertifiedInfoForm.title")}</div>
         <div>
           <div className="pr-1 text-lg">
             {" "}
@@ -72,9 +74,7 @@ const CertifiedInformation = ({
         </div>
       </div>
       {errors && (
-        <div className="p-2 bg-yellow-300">
-          Participant Information Is Required
-        </div>
+        <div className="p-2 bg-yellow-300">{t("CertifiedInfoForm.error")}</div>
       )}
       {readMore ? (
         <>
@@ -92,7 +92,7 @@ const CertifiedInformation = ({
                   value={certifiedState.lastDive}
                 />
                 <label htmlFor="lastDive" className="contactFormLabel">
-                  Last Dive
+                  {t("CertifiedInfoForm.lastDive")}
                 </label>
               </div>
               <div className="relative z-0 mb-6 w-2/5 group">
@@ -107,7 +107,7 @@ const CertifiedInformation = ({
                   value={certifiedState.totalDives}
                 />
                 <label htmlFor="totalDives" className="contactFormLabel">
-                  Number of Dives
+                  {t("CertifiedInfoForm.totalDives")}
                 </label>
               </div>
             </div>
@@ -124,7 +124,7 @@ const CertifiedInformation = ({
                   value={certifiedState.depDive}
                 />
                 <label htmlFor="depDate" className="contactFormLabel">
-                  Depature Date
+                  {t("CertifiedInfoForm.depDate")}
                 </label>
               </div>
               <div className="relative z-0 mb-6 w-2/5 group">
@@ -150,7 +150,7 @@ const CertifiedInformation = ({
                 </label>
                 <div className="flex flex-col items-center justify-center">
                   <p className="mb-2 text-sm text-gray-500">
-                    <span className="">Upload Certification</span>
+                    <span className="">{t("CertifiedInfoForm.cert")}</span>
                   </p>
                 </div>
                 <input

@@ -14,15 +14,18 @@ import {
   liabilityRelease8,
   liabilityRelease9,
 } from "../../../data/liabilityRelease"
+import { useTranslation } from "react-i18next"
+import { diveCenter } from "@/data/diveCenter"
 const DiscoverLiability = ({ firstName, lastName }) => {
   const [readMore, setReadMore] = useState(false)
+  const { t } = useTranslation()
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        <div>Liability Release and Assumption of Risk Agreement</div>
+        <div>{t("DsdLiabilityRelease.title")}</div>
         <div>
           <div className="pr-1 text-lg">
             {" "}
@@ -37,62 +40,65 @@ const DiscoverLiability = ({ firstName, lastName }) => {
             <section className="m-2 block bg-white border border-gray-200 rounded-lg shadow">
               <p className="text-gray-700 text-base m-4">
                 {" "}
-                I,
+                {t("DsdLiabilityRelease.I")},
                 <span className="italic">
                   {" "}
                   {firstName} {lastName}
                 </span>
-                , {liabilityRelease1}
+                , {t("DsdLiabilityRelease.liabilityRelease1")}
               </p>
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease2 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease3 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease4 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease5 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease6 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease7 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease8 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease9 }}
-              />
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease10 }}
-              />
               <p className="text-gray-700 text-base m-4">
                 {" "}
-                I,
+                {t("DsdLiabilityRelease.liabilityRelease2")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease3")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease4")}{" "}
+                <span class="italic">{diveCenter}</span>{" "}
+                {t("DsdLiabilityRelease.liabilityRelease5")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease6")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease7")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease8")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease9")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease10")}
+              </p>
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease11")}
+              </p>
+
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.I")},
                 <span className="italic">
                   {" "}
                   {firstName} {lastName}
                 </span>
-                , {liabilityRelease11}
+                , {t("DsdLiabilityRelease.liabilityRelease12")}
               </p>
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: liabilityRelease12 }}
-              />
+              <p className="text-gray-700 text-base m-4">
+                {" "}
+                {t("DsdLiabilityRelease.liabilityRelease13")}
+              </p>
             </section>
           </div>
         </>

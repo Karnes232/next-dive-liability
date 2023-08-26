@@ -16,7 +16,10 @@ const HotelSelectButton = ({ hotel, image, link }) => {
         alt="Picture of the author"
       />
       <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+        <h5
+          translate="no"
+          className="mb-2 text-2xl font-bold tracking-tight text-gray-900 "
+        >
           {hotel}
         </h5>
       </div>

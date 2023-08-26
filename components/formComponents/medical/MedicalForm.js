@@ -7,6 +7,7 @@ import {
   medicalQuestions,
 } from "../../../data/medicalStatement"
 import MedicalCard from "./MedicalCard"
+import { useTranslation } from "react-i18next"
 const MedicalForm = ({
   medicalState,
   setMedicalState,
@@ -14,6 +15,7 @@ const MedicalForm = ({
   readMoreForm,
   setReadMoreForm,
 }) => {
+  const { t } = useTranslation()
   const [readMoreMedicalStatement, setReadMoreMedicalStatement] =
     useState(false)
   const handleChange = e => {
@@ -28,20 +30,16 @@ const MedicalForm = ({
     <div className="mt-5 mb-10 block  bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
       <div onClick={e => setReadMoreForm(!readMoreForm)}>
         <div className="p-2 text-sm bg-slate-200 w-full flex justify-between items-center">
-          <div>Please Complete the form </div>
+          <div>{t("MedicalForm.subtitle")} </div>
           <div className="pr-1 text-lg">
             {" "}
             {readMoreForm ? <BsArrowsAngleContract /> : <BsArrowsAngleExpand />}
           </div>
         </div>
-        <div className="p-2 text-lg bg-slate-200">
-          Diver Medical Participant Questionnaire
-        </div>
+        <div className="p-2 text-lg bg-slate-200">{t("MedicalForm.title")}</div>
       </div>
       {errors && (
-        <div className="p-2 bg-yellow-300">
-          Medical Questionnaire Is Required
-        </div>
+        <div className="p-2 bg-yellow-300">{t("MedicalForm.error")}</div>
       )}
       {readMoreForm ? (
         <div className="mt-2">
@@ -49,13 +47,13 @@ const MedicalForm = ({
             <p className="text-gray-700 text-base m-4">
               {readMoreMedicalStatement ? (
                 <>
-                  {medicalStatement}
+                  {t("MedicalForm.medicalStatement")}
                   <br />
                   <br />
-                  {medicalStatement2}
+                  {t("MedicalForm.medicalStatement")}
                 </>
               ) : (
-                `${medicalStatement.substring(0, 150)}...`
+                `${t("MedicalForm.medicalStatement").substring(0, 150)}...`
               )}
               <br />
               <button
@@ -70,14 +68,13 @@ const MedicalForm = ({
             </p>
           </section>
           <section className="flex flex-col justify-center items-center mx-2 space-y-2">
-            <div className="text-2xl my-2">Directions</div>
+            <div className="text-2xl my-2">{t("MedicalForm.directions")}</div>
             <p className="text-xs md:text-sm font-medium">
-              Complete this questionnaire as a prerequisite to a recreational
-              scuba diving or freediving course
+              {t("MedicalForm.directions-sub")}
             </p>
             <p className="text-xs md:text-sm ">
-              <span className="font-medium">Note to women:</span> If you are
-              pregnant, or attempting to become pregnant, do not dive.
+              <span className="font-medium">{t("MedicalForm.women")} </span>
+              {t("MedicalForm.note")}
             </p>
           </section>
           <section className="my-8 mx-2 block bg-white border border-gray-200 rounded-lg shadow">
@@ -91,13 +88,16 @@ const MedicalForm = ({
                   }
                 }
                 return (
-                  <MedicalCard
-                    key={index}
-                    question={question}
-                    handleChange={handleChange}
-                    state={state}
-                    medicalState={medicalState}
-                  />
+                  <>
+                    <MedicalCard
+                      key={index}
+                      question={question}
+                      handleChange={handleChange}
+                      state={state}
+                      medicalState={medicalState}
+                      translatedQuestion={t(question.question)}
+                    />
+                  </>
                 )
               })}
             </main>

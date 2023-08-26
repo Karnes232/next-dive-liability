@@ -14,17 +14,19 @@ import {
   standardSafeStatement9,
 } from "@/data/standardSafeDiving"
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs"
 
 const StandardSafeDiving = ({ firstName, lastName }) => {
   const [readMore, setReadMore] = useState(false)
+  const { t } = useTranslation()
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
         className="p-2 text-lg bg-slate-200 w-full flex justify-between items-center"
         onClick={e => setReadMore(!readMore)}
       >
-        <div>Standard Safe Diving Practices Statement of Understanding</div>
+        <div>{t("StandardSafe.title")}</div>
         <div>
           <div className="pr-1 text-lg">
             {" "}
@@ -36,66 +38,54 @@ const StandardSafeDiving = ({ firstName, lastName }) => {
         <>
           <div className="mt-2">
             <section className="m-2 block bg-white border border-gray-200 rounded-lg shadow">
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: standardSafeStatement1 }}
-              />
+              <p className="text-gray-700 text-base m-4">
+                {t("StandardSafe.standardSafeStatement1")}{" "}
+              </p>
               <p className="text-gray-700 text-base m-4">
                 {" "}
-                I,
+                {t("StandardSafe.I")},
                 <span className="italic">
                   {" "}
                   {firstName} {lastName}
                 </span>
-                , {standardSafeStatement2}
+                , {t("StandardSafe.standardSafeStatement2")}
               </p>
               <ol type="1" className="list-decimal ml-4">
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement3 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement4 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement5 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement6 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement7 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement8 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement9 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement10 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement11 }}
-                />
-                <li 
-                     className="text-gray-700 text-base m-4 pl-1"
-                     dangerouslySetInnerHTML={{ __html: standardSafeStatement12 }}
-                />
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement3")}
+                </li>
+
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement4")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement5")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement6")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement7")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement8")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement9")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement10")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement11")}
+                </li>
+                <li className="text-gray-700 text-base m-4 pl-1">
+                  {t("StandardSafe.standardSafeStatement12")}
+                </li>
               </ol>
-              <p
-                className="text-gray-700 text-base m-4"
-                dangerouslySetInnerHTML={{ __html: standardSafeStatement13 }}
-              />
-              
+              <p className="text-gray-700 text-base m-4">
+                {t("StandardSafe.standardSafeStatement13")}
+              </p>
             </section>
           </div>
         </>

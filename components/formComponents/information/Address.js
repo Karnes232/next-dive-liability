@@ -1,6 +1,8 @@
 import React from "react"
+import { useTranslation } from "react-i18next"
 
 const Address = ({ handleChange, informationState }) => {
+  const { t } = useTranslation()
   return (
     <>
       <div className="relative z-0 mb-6 w-full group">
@@ -15,7 +17,7 @@ const Address = ({ handleChange, informationState }) => {
           value={informationState.address}
         />
         <label htmlFor="address" className="contactFormLabel">
-          Address
+          {t("InformationForm.address")}
         </label>
       </div>
       <div className="relative z-0 mb-6 w-full group">
@@ -30,7 +32,7 @@ const Address = ({ handleChange, informationState }) => {
           value={informationState.city}
         />
         <label htmlFor="city" className="contactFormLabel">
-          City
+          {t("InformationForm.city")}
         </label>
       </div>
       <div className="flex justify-between">
@@ -45,7 +47,7 @@ const Address = ({ handleChange, informationState }) => {
             value={informationState.state}
           />
           <label htmlFor="state" className="contactFormLabel">
-            State
+            {t("InformationForm.state")}
           </label>
         </div>
         <div className="relative z-0 mb-6 w-2/5 group">
@@ -59,7 +61,7 @@ const Address = ({ handleChange, informationState }) => {
             value={informationState.zipcode}
           />
           <label htmlFor="zipcode" className="contactFormLabel">
-            Zip Code
+            {t("InformationForm.zipcode")}
           </label>
         </div>
       </div>
@@ -75,7 +77,7 @@ const Address = ({ handleChange, informationState }) => {
           value={informationState.country}
         />
         <label htmlFor="country" className="contactFormLabel">
-          Country
+          {t("InformationForm.country")}
         </label>
       </div>
     </>
