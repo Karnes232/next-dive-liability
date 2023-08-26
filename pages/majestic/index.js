@@ -7,7 +7,7 @@ const Index = () => {
   const { t } = useTranslation()
   return (
     <Layout>
-      <main className="min-h-screen flex flex-col justify-center items-center mx-5 lg:w-3/4 max-w-4xl lg:mx-auto">
+      <main className="min-h-screen mt-10 flex flex-col justify-start items-center mx-5 lg:w-3/4 max-w-4xl lg:mx-auto">
         <LiabilitySelectButton
           name={t("LiabilitySelectButton1")}
           link="/majestic/dsd"
