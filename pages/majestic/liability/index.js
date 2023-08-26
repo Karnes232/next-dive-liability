@@ -7,8 +7,8 @@ const index = () => {
     <Layout>
       <main className="min-h-screen">
         <LiabilityReleaseForm
-          hotel="Occidental Caribe"
-          liabilityLocation="Occidental Caribe General Liability"
+          hotel="Majestic"
+          liabilityLocation="Majestic General Liability"
         />
       </main>
     </Layout>

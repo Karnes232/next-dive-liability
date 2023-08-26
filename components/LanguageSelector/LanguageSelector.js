@@ -12,12 +12,14 @@ const LanguageSelector = () => {
 
   return (
     <div className="flex justify-end px-2 max-w-4xl mx-auto">
-    <select defaultValue={selectedLanguage} onChange={chooseLanguage}
-    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 "
-    >
-      <option value="en">English</option>
-      <option value="es">Spanish</option>
-    </select>
+      <select
+        defaultValue={selectedLanguage}
+        onChange={chooseLanguage}
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 "
+      >
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+      </select>
     </div>
   )
 }

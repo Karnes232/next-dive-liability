@@ -1,10 +1,16 @@
+import LiabilityReleaseForm from "@/components/formComponents/LiabilityReleaseForm"
 import Layout from "@/components/layout"
 import React from "react"
 
 const index = () => {
   return (
     <Layout>
-      <main className="min-h-screen flex flex-col justify-center items-center mx-5"></main>
+      <main className="min-h-screen">
+        <LiabilityReleaseForm
+          hotel="Occident Punta Cana"
+          liabilityLocation="Occidental Punta Cana General Liability"
+        />
+      </main>
     </Layout>
   )
 }

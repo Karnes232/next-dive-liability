@@ -100,10 +100,10 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
   }
   return (
     <form
-      name="contact"
+      name="fdLiability"
       method="POST"
       action={`/`}
-      id="contact"
+      id="fdLiability"
       onSubmit={handleSubmit}
       className="px-2 max-w-4xl mx-auto min-h-[75vh] mb-10"
     >

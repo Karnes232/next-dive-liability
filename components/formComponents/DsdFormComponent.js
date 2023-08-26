@@ -75,10 +75,10 @@ const DsdFormComponent = ({ hotel, liabilityLocation }) => {
   }
   return (
     <form
-      name="contact"
+      name="dsdLiability"
       method="POST"
       action={`/`}
-      id="contact"
+      id="dsdLiability"
       onSubmit={handleSubmit}
       className="px-2 max-w-4xl mx-auto min-h-[75vh] mb-10"
     >

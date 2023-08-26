@@ -4,7 +4,10 @@ import LanguageSelector from "./LanguageSelector/LanguageSelector"
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen font-montserrat flex flex-col justify-between overflow-x-hidden">
+    <div
+      translate="no"
+      className="min-h-screen font-montserrat flex flex-col justify-between overflow-x-hidden"
+    >
       <Header />
       <div>
         <LanguageSelector />
