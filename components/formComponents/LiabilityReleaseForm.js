@@ -3,8 +3,14 @@ import InformationForm from "./standardLiabilityRelease/InformationForm"
 import StandardLiabilityRelease from "./standardLiabilityRelease/StandardLiabilityRelease"
 import Signature from "./signature/Signature"
 import ConsentComponent from "./Consent/ConsentComponent"
+import { generalValidation } from "./generalValidation"
+import createLiabilityPdf from "@/Firebase/createLiabilityPdf"
+
+import { useRouter } from "next/router"
 
 const LiabilityReleaseForm = ({ liabilityLocation }) => {
+  const router = useRouter()
+
   const [informationError, setInformationError] = useState(false)
   const [consent, setConsent] = useState(false)
   const [signatureMissing, setSignatureMissing] = useState(false)
@@ -15,6 +21,33 @@ const LiabilityReleaseForm = ({ liabilityLocation }) => {
   let sigCanvas = useRef()
   const handleSubmit = async e => {
     e.preventDefault()
+    const notValid = await generalValidation(informationState)
+    const isEmpty = sigCanvas.current.isEmpty()
+    let signatureImage = ""
+    if (isEmpty === false) {
+      setSignatureMissing(false)
+      signatureImage = sigCanvas.current.toDataURL("image/jpg", {
+        crossOrigin: "anonymous",
+      })
+      if (notValid === false) {
+        setInformationError(false)
+        createLiabilityPdf(informationState, signatureImage, liabilityLocation)
+        setTimeout(() => {
+          console.log("Pushed")
+          router.push("https://dive-liability.netlify.app/")
+        }, 10000)
+      } else if (notValid !== false) {
+        console.log("Participant Information Missing")
+        setInformationError(true)
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      }
+    } else {
+      setSignatureMissing(true)
+      console.log("Signature Missing")
+    }
   }
   return (
     <form
