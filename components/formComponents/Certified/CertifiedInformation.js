@@ -12,6 +12,7 @@ const CertifiedInformation = ({
   const [readMore, setReadMore] = useState(false)
   const [file, setFile] = useState(null)
   const [fileDataURL, setFileDataURL] = useState(null)
+  const [fileSizeExceeded, setFileSizeExceeded] = useState(false);
   const handleChange = e => {
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value
@@ -23,10 +24,16 @@ const CertifiedInformation = ({
 
   const imageChangeHandler = e => {
     const file = e.target.files[0]
+    console.log(file)
     if (!file.type.match(imageMimeType)) {
       alert("Image mime type is not valid")
       return
     }
+    if (file.size > maxFileSize) {
+      setFileSizeExceeded(true);
+      return; // do not process the file if it exceeds the size limit
+  }
+  setFileSizeExceeded(false)
     setFile(file)
     setCertifiedState({
       ...certifiedState,
@@ -58,7 +65,7 @@ const CertifiedInformation = ({
       }
     }
   }, [file])
-
+  const maxFileSize = 5000; // 5Kb
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
@@ -162,6 +169,11 @@ const CertifiedInformation = ({
               </div>
             </div>
             <div>
+            {fileSizeExceeded && (
+                        <p className='error'>
+                            File size exceeded the limit of {maxFileSize / 1000} KB
+                        </p>
+                    )}
               {fileDataURL ? (
                 <p className="img-preview-wrapper">
                   {<img src={fileDataURL} alt="preview" />}
