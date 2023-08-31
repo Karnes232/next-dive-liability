@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   headerTitleContainer: {
     flexGrow: 9,
-    maxWidth: 320,
+    maxWidth: 260,
     fontFamily: "Helvetica-Bold",
   },
   headerTitle: {},
@@ -56,7 +56,26 @@ const styles = StyleSheet.create({
     borderBottomStyle: "solid",
     paddingBottom: 5,
     paddingLeft: 20,
-  }
+  },
+  eSign: {
+    fontSize: 8,
+    marginVertical: 4,
+  },
+  leftColumnEsign: {
+    width: 50,
+  },
+  rightColumnEsign: {
+    width: 400,
+  },
+  eSignContainer: {
+    flexDirection: "row",
+  },
+  eSignImage: {
+    width: 15,
+    height: 15,
+    marginVertical: 12,
+    marginHorizontal: 12,
+  },
 })
 
 const PDFFileGeneral = ({ informationState, signature }) => {
@@ -128,9 +147,20 @@ const PDFFileGeneral = ({ informationState, signature }) => {
             style={styles.signature}
           />
         </View>
-        <Text style={styles.generalLiability}>
-            {today}
-        </Text>
+        <Text style={styles.generalLiability}>{today}</Text>
+        <View style={styles.eSignContainer}>
+          <View style={styles.leftColumnEsign}>
+            <Image
+              src="https://static-00.iconduck.com/assets.00/checkmark-icon-2048x1708-h04h2jee.png"
+              source="https://static-00.iconduck.com/assets.00/checkmark-icon-2048x1708-h04h2jee.png"
+              alt="checkmark"
+              style={styles.eSignImage}
+            />
+          </View>
+          <View style={styles.rightColumnEsign}>
+            <Text style={styles.eSign}>{t("Signature.consent")}</Text>
+          </View>{" "}
+        </View>
       </Page>
     </Document>
   )
