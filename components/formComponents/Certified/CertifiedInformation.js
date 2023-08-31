@@ -65,7 +65,7 @@ const CertifiedInformation = ({
       }
     }
   }, [file])
-  const maxFileSize = 5000; // 5Kb
+  const maxFileSize = 250000; // 250Kb
   return (
     <div className="mt-5 mb-10 block bg-white border border-gray-200 rounded-lg shadow">
       <div
