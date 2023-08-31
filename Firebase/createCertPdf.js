@@ -16,7 +16,7 @@ export default async function createCertPdf(
 ) {
   let file = null
   let today = new Date()
-  const fileName = `${informationState.lastName} - ${informationState.firstName} -liability.pdf`
+  const fileName = `${informationState.lastName} - ${informationState.firstName} -liability - ${uniqid()}.pdf`
   new Compressor(certifiedState.certImage, {
     quality: 0.2,
     success(result) {

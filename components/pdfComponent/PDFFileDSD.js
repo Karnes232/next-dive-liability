@@ -257,40 +257,54 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
           {t("NonDisclosure.part3")}
         </Text>
 
-        <Text style={styles.titleInformation}>
-        {t("MedicalForm.title")}
-        </Text>
+        <Text style={styles.titleInformation}>{t("MedicalForm.title")}</Text>
         <View style={styles.medicalDiv}>
           <View style={styles.leftColumnMedical}>
             <Text style={styles.medicalDivText}>
-            {t("I have had problems with my lungs, breathing, heart and/or blood affecting my normal physical or mental performance.")}
+              {t(
+                "I have had problems with my lungs, breathing, heart and/or blood affecting my normal physical or mental performance.",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I am over 45 years of age.")}
+              {t("I am over 45 years of age.")}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I struggle to perform moderate exercise (for example, walk 1.6 kilometer/one mile in 14 minutes or swim 200 meters/yards without resting), OR I have been unable to participate in a normal physical activity due to fitness or health reasons within the past 12 months.**")}
+              {t(
+                "I struggle to perform moderate exercise (for example, walk 1.6 kilometer/one mile in 14 minutes or swim 200 meters/yards without resting), OR I have been unable to participate in a normal physical activity due to fitness or health reasons within the past 12 months.**",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I have had problems with my eyes, ears, or nasal passages/sinuses.")}
+              {t(
+                "I have had problems with my eyes, ears, or nasal passages/sinuses.",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I have had surgery within the last 12 months, OR I have ongoing problems related to past surgery.**")}
+              {t(
+                "I have had surgery within the last 12 months, OR I have ongoing problems related to past surgery.**",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I have lost consciousness, had migraine headaches, seizures, stroke, significant head injury, or suffer from persistent neurologic injury or disease.")}
+              {t(
+                "I have lost consciousness, had migraine headaches, seizures, stroke, significant head injury, or suffer from persistent neurologic injury or disease.",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I am currently undergoing treatment (or have required treatment within the last five years) for psychological problems, personality disorder, panic attacks, or an addiction to drugs or alcohol; or, I have been diagnosed with a learning or developmental disability.")}
+              {t(
+                "I am currently undergoing treatment (or have required treatment within the last five years) for psychological problems, personality disorder, panic attacks, or an addiction to drugs or alcohol; or, I have been diagnosed with a learning or developmental disability.",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I have had back problems, hernia, ulcers, or diabetes.")}
+              {t("I have had back problems, hernia, ulcers, or diabetes.")}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I have had stomach or intestine problems, including recent diarrhea.")}
+              {t(
+                "I have had stomach or intestine problems, including recent diarrhea.",
+              )}
             </Text>
             <Text style={styles.medicalDivText}>
-            {t("I am taking prescription medications (with the exception of birth control or or anti-malarial drugs other than mefloquine (Lariam).**")}
+              {t(
+                "I am taking prescription medications (with the exception of birth control or or anti-malarial drugs other than mefloquine (Lariam).**",
+              )}
             </Text>
           </View>
 
@@ -337,22 +351,34 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I have had problems with my lungs, breathing, heart and/or blood affecting my normal physical or mental performance.")}
+                  {t(
+                    "I have had problems with my lungs, breathing, heart and/or blood affecting my normal physical or mental performance.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Chest surgery, heart surgery, heart valve surgery, an implantable medical device (eg, stent, pacemaker, neurostimulator), pneumothorax, and/or chronic lung disease.")}
+                  {t(
+                    "Chest surgery, heart surgery, heart valve surgery, an implantable medical device (eg, stent, pacemaker, neurostimulator), pneumothorax, and/or chronic lung disease.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Asthma, wheezing, severe allergies, hay fever or congested airways within the last 12 months that limits my physical activity/exercise.")}
+                  {t(
+                    "Asthma, wheezing, severe allergies, hay fever or congested airways within the last 12 months that limits my physical activity/exercise.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("A problem or illness involving my heart such as: angina, chest pain on exertion, heart failure, immersion pulmonary edema, heart attack or stroke, OR am taking medication for any heart condition.")}
+                  {t(
+                    "A problem or illness involving my heart such as: angina, chest pain on exertion, heart failure, immersion pulmonary edema, heart attack or stroke, OR am taking medication for any heart condition.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Recurrent bronchitis and currently coughing within the past 12 months, OR have been diagnosed with emphysema.")}
+                  {t(
+                    "Recurrent bronchitis and currently coughing within the past 12 months, OR have been diagnosed with emphysema.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Symptoms affecting my lungs, breathing, heart and/or blood in the last 30 days that impair my physical or mental performance.")}
+                  {t(
+                    "Symptoms affecting my lungs, breathing, heart and/or blood in the last 30 days that impair my physical or mental performance.",
+                  )}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
@@ -385,19 +411,21 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I am over 45 years of age.")}
+                  {t("I am over 45 years of age.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("I currently smoke or inhale nicotine by other means.")}
+                  {t("I currently smoke or inhale nicotine by other means.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("I have a high cholesterol level.")}
+                  {t("I have a high cholesterol level.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("I have high blood pressure.")}
+                  {t("I have high blood pressure.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("I have had a close blood relative die suddenly or of cardiac disease or stroke before the age of 50, OR have a family history of heart disease before age 50 (including abnormal heart rhythms, coronary artery disease or cardiomyopathy).")}
+                  {t(
+                    "I have had a close blood relative die suddenly or of cardiac disease or stroke before the age of 50, OR have a family history of heart disease before age 50 (including abnormal heart rhythms, coronary artery disease or cardiomyopathy).",
+                  )}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
@@ -428,19 +456,23 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I have had problems with my eyes, ears, or nasal passages/sinuses.")}
+                  {t(
+                    "I have had problems with my eyes, ears, or nasal passages/sinuses.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Sinus surgery within the last 6 months.")}
+                  {t("Sinus surgery within the last 6 months.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Ear disease or ear surgery, hearing loss, or problems with balance.")}
+                  {t(
+                    "Ear disease or ear surgery, hearing loss, or problems with balance.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Recurrent sinusitis within the past 12 months.")}
+                  {t("Recurrent sinusitis within the past 12 months.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Eye surgery within the past 3 months.")}
+                  {t("Eye surgery within the past 3 months.")}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
@@ -471,22 +503,32 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I have lost consciousness, had migraine headaches, seizures, stroke, significant head injury, or suffer from persistent neurologic injury or disease.")}
+                  {t(
+                    "I have lost consciousness, had migraine headaches, seizures, stroke, significant head injury, or suffer from persistent neurologic injury or disease.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Head injury with loss of consciousness within the past 5 years.")}
+                  {t(
+                    "Head injury with loss of consciousness within the past 5 years.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Persistent neurologic injury or disease.")}
+                  {t("Persistent neurologic injury or disease.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Recurring migraine headaches within the past 12 months, or take medications to prevent them.")}
+                  {t(
+                    "Recurring migraine headaches within the past 12 months, or take medications to prevent them.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Blackouts or fainting (full/partial loss of consciousness) within the last 5 years.")}
+                  {t(
+                    "Blackouts or fainting (full/partial loss of consciousness) within the last 5 years.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Epilepsy, seizures, or convulsions, OR take medications to prevent them.")}
+                  {t(
+                    "Epilepsy, seizures, or convulsions, OR take medications to prevent them.",
+                  )}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
@@ -520,19 +562,29 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I am currently undergoing treatment (or have required treatment within the last five years) for psychological problems, personality disorder, panic attacks, or an addiction to drugs or alcohol; or, I have been diagnosed with a learning or developmental disability.")}
+                  {t(
+                    "I am currently undergoing treatment (or have required treatment within the last five years) for psychological problems, personality disorder, panic attacks, or an addiction to drugs or alcohol; or, I have been diagnosed with a learning or developmental disability.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Behavioral health, mental or psychological problems requiring medical/psychiatric treatment")}
+                  {t(
+                    "Behavioral health, mental or psychological problems requiring medical/psychiatric treatment",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Major depression, suicidal ideation, panic attacks, uncontrolled bipolar disorder requiring medication/psychiatric treatment.")}
+                  {t(
+                    "Major depression, suicidal ideation, panic attacks, uncontrolled bipolar disorder requiring medication/psychiatric treatment.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Been diagnosed with a mental health condition or a learning/developmental disorder that requires ongoing care or special accommodation.")}
+                  {t(
+                    "Been diagnosed with a mental health condition or a learning/developmental disorder that requires ongoing care or special accommodation.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("An addiction to drugs or alcohol requiring treatment within the last 5 years.")}
+                  {t(
+                    "An addiction to drugs or alcohol requiring treatment within the last 5 years.",
+                  )}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
@@ -563,22 +615,30 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I have had back problems, hernia, ulcers, or diabetes.")}
+                  {t("I have had back problems, hernia, ulcers, or diabetes.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Recurrent back problems in the last 6 months that limit my everyday activity.")}
+                  {t(
+                    "Recurrent back problems in the last 6 months that limit my everyday activity.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Back or spinal surgery within the last 12 months.")}
+                  {t("Back or spinal surgery within the last 12 months.")}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Diabetes, either drug or diet controlled, OR gestational diabetes within the last 12 months")}
+                  {t(
+                    "Diabetes, either drug or diet controlled, OR gestational diabetes within the last 12 months",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("An uncorrected hernia that limits my physical abilities.")}
+                  {t(
+                    "An uncorrected hernia that limits my physical abilities.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Active or untreated ulcers, problem wounds, or ulcer surgery within the last 6 months.")}
+                  {t(
+                    "Active or untreated ulcers, problem wounds, or ulcer surgery within the last 6 months.",
+                  )}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
@@ -611,25 +671,37 @@ const PDFFileDSD = ({ informationState, medicalState, signature }) => {
             <View style={styles.medicalDiv}>
               <View style={styles.leftColumnMedical}>
                 <Text style={styles.medicalDivText}>
-                {t("I have had stomach or intestine problems, including recent diarrhea.")}
+                  {t(
+                    "I have had stomach or intestine problems, including recent diarrhea.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Ostomy surgery and do not have medical clearance to swim or engage in physical activity.")}
+                  {t(
+                    "Ostomy surgery and do not have medical clearance to swim or engage in physical activity.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Dehydration requiring medical intervention within the last 7 days.")}
+                  {t(
+                    "Dehydration requiring medical intervention within the last 7 days.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Active or untreated stomach or intestinal ulcers or ulcer surgery within the last 6 months.")}
+                  {t(
+                    "Active or untreated stomach or intestinal ulcers or ulcer surgery within the last 6 months.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Frequent heartburn, regurgitation, or gastroesophageal reflux disease (GERD).")}
+                  {t(
+                    "Frequent heartburn, regurgitation, or gastroesophageal reflux disease (GERD).",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Active or uncontrolled ulcerative colitis or Crohn's disease.")}
+                  {t(
+                    "Active or uncontrolled ulcerative colitis or Crohn's disease.",
+                  )}
                 </Text>
                 <Text style={styles.medicalDivTextSecondary}>
-                {t("Bariatric surgery within the last 12 months..")}
+                  {t("Bariatric surgery within the last 12 months..")}
                 </Text>
               </View>
               <View style={styles.rightColumnMedical}>
