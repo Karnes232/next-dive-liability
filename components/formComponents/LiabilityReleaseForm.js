@@ -32,10 +32,10 @@ const LiabilityReleaseForm = ({ liabilityLocation }) => {
       if (notValid === false) {
         setInformationError(false)
         createLiabilityPdf(informationState, signatureImage, liabilityLocation)
-        setTimeout(() => {
-          console.log("Pushed")
-          router.push("https://dive-liability.netlify.app/")
-        }, 10000)
+        // setTimeout(() => {
+        //   console.log("Pushed")
+        //   router.push("https://dive-liability.netlify.app/")
+        // }, 10000)
       } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)

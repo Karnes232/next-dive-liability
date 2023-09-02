@@ -57,7 +57,7 @@ export default async function createCertPdf(
               },
             )
           })
-        })
+        }).then(e => window.location.href = "https://dive-liability.netlify.app/")
         if (browser.name !== "ios") {
           FileSaver.saveAs(blob, fileName)
         }

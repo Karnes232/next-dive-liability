@@ -63,10 +63,10 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
         setInformationError(false)
         setMedicalError(false)
         setCertError(false)
-        setTimeout(() => {
-          console.log("Pushed")
-          router.push("https://dive-liability.netlify.app/")
-        }, 10000)
+        // setTimeout(() => {
+        //   console.log("Pushed")
+        //   router.push("https://dive-liability.netlify.app/")
+        // }, 10000)
       } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)
