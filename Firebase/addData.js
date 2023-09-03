@@ -1,7 +1,7 @@
 import { getFirestore, doc, setDoc } from "firebase/firestore"
 import firebase_app, { db } from "./config"
 
-export default async function addData(colllection, id, data) {
+export default async function addData(colllection, id, data, handleReroute) {
   let result = null
   let error = null
 
@@ -9,6 +9,7 @@ export default async function addData(colllection, id, data) {
     result = await setDoc(doc(db, colllection, id), data, {
       merge: true,
     })
+    await handleReroute()
   } catch (e) {
     error = e
   }

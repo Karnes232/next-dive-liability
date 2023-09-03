@@ -1,10 +1,10 @@
-import SearchComponent from '@/components/searchComponent/SearchComponent'
-import React from 'react'
+import SearchComponent from "@/components/searchComponent/SearchComponent"
+import React from "react"
 
 const search = () => {
   return (
     <div>
-        <SearchComponent liabilityLocation="Majestic General Liability"/ >
+      <SearchComponent liabilityLocation="Majestic General Liability" />
     </div>
   )
 }

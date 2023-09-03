@@ -13,10 +13,13 @@ export default async function createCertPdf(
   signature,
   certifiedState,
   liabilityLocation,
+  handleReroute,
 ) {
   let file = null
   let today = new Date()
-  const fileName = `${informationState.lastName} - ${informationState.firstName} -liability - ${uniqid()}.pdf`
+  const fileName = `${informationState.lastName} - ${
+    informationState.firstName
+  } -liability - ${uniqid()}.pdf`
   new Compressor(certifiedState.certImage, {
     quality: 0,
     success(result) {
@@ -55,6 +58,7 @@ export default async function createCertPdf(
                 created: today,
                 name: `${informationState.lastName}, ${informationState.firstName}`,
               },
+              handleReroute,
             )
           })
         })

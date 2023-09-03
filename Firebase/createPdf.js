@@ -11,6 +11,7 @@ export default async function createPdf(
   medicalState,
   signature,
   liabilityLocation,
+  handleReroute,
 ) {
   let file = null
   let today = new Date()
@@ -35,6 +36,7 @@ export default async function createPdf(
             created: today,
             name: `${informationState.lastName}, ${informationState.firstName}`,
           },
+          handleReroute,
         )
       })
     })

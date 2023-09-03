@@ -2,7 +2,7 @@ import { db } from "@/Firebase/config"
 import { collection, getDocs } from "firebase/firestore"
 import React, { useEffect, useState } from "react"
 import Search from "@/components/searchBar/search"
-const SearchComponent = ({liabilityLocation}) => {
+const SearchComponent = ({ liabilityLocation }) => {
   const [liabilityForms, setLiabilityForms] = useState([])
   const [searchValue, setSearchValue] = useState("")
   useEffect(() => {
@@ -35,7 +35,10 @@ const SearchComponent = ({liabilityLocation}) => {
         const newDate = new Date(form.created.seconds * 1000)
 
         return (
-          <div key={index} className="flex w-full space-x-16 border my-2 py-1 px-2">
+          <div
+            key={index}
+            className="flex w-full space-x-16 border my-2 py-1 px-2"
+          >
             <div className="w-28">
               {newDate.getDate()} - {newDate.getMonth() + 1} -{" "}
               {newDate.getFullYear()}

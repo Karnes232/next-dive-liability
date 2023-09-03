@@ -16,134 +16,134 @@ import { useTranslation } from "react-i18next"
 const padiLogo = "https://i.ibb.co/1rch08r/padiLogo.jpg"
 
 const styles = StyleSheet.create({
-    body: {
-      paddingTop: 35,
-      paddingBottom: 25,
-      paddingHorizontal: 35,
-    },
-    generalLiability: {
-      fontSize: 10,
-      marginVertical: 2,
-    },
-    nonDisclosure: {
-      fontSize: 9,
-      marginVertical: 4,
-    },
-    title: {
-      fontSize: 22,
-      textAlign: "center",
-      maxWidth: 320,
-      marginLeft: 20,
-    },
-    titleInformation: {
-      fontSize: 24,
-      textAlign: "center",
-    },
-    headerImageContainer: {
-      maxWidth: 120,
-    },
-    headerContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-    },
-    rightColumnMedical: {
-      flexDirection: "column",
-      width: 70,
-      paddingTop: 5,
-      paddingRight: 15,
-    },
-    leftColumnMedical: {
-      flexDirection: "column",
-      width: 400,
-      paddingTop: 2,
-      paddingRight: 15,
-    },
-    image: {
-      height: 100,
-      width: 200,
-      borderBottomWidth: 2,
-      borderBottomColor: "#112131",
-      borderBottomStyle: "solid",
-      paddingBottom: 5,
-      paddingLeft: 20,
-    },
-    eSign: {
-      fontSize: 8,
-      marginVertical: 4,
-    },
-    leftColumnEsign: {
-      width: 50,
-    },
-    rightColumnEsign: {
-      width: 400,
-    },
-    eSignContainer: {
-      flexDirection: "row",
-    },
-    eSignImage: {
-      width: 15,
-      height: 15,
-      marginVertical: 12,
-      marginHorizontal: 12,
-    },
-    rightColumn: {
-      flexDirection: "column",
-      width: 570,
-      paddingTop: 5,
-      paddingRight: 15,
-      height: 100,
-    },
-    informationDivText: {
-      fontSize: 14,
-      marginVertical: 4,
-    },
-    informationDiv: {
-      marginTop: 15,
-      marginBottom: 10,
-      flex: 1,
-      flexDirection: "row",
-      height: 35,
-    },
-    medicalDiv: {
-      marginTop: 5,
-      marginBottom: 10,
-      flexDirection: "row",
-    },
-    leftColumn: {
-      flexDirection: "column",
-      width: 570,
-      paddingTop: 5,
-      paddingRight: 15,
-      height: 100,
-    },
-    medicalDivText: {
-      fontSize: 10,
-      height: 40,
-    },
-    medicalDivTextSecondary: {
-      fontSize: 10,
-      paddingLeft: 10,
-      paddingVertical: 5,
-      height: 35,
-    },
-    leftColumnSmall: {
-        flexDirection: "column",
-        width: 570,
-        paddingTop: 15,
-        paddingRight: 15,
-        height: 50,
-      },
-      rightColumnSmall: {
-        flexDirection: "column",
-        width: 570,
-        paddingTop: 15,
-        paddingRight: 15,
-        height: 50,
-      },
-      certImage: {
-        height: 100,
-        width: 200,
-      },
+  body: {
+    paddingTop: 35,
+    paddingBottom: 25,
+    paddingHorizontal: 35,
+  },
+  generalLiability: {
+    fontSize: 10,
+    marginVertical: 2,
+  },
+  nonDisclosure: {
+    fontSize: 9,
+    marginVertical: 4,
+  },
+  title: {
+    fontSize: 22,
+    textAlign: "center",
+    maxWidth: 320,
+    marginLeft: 20,
+  },
+  titleInformation: {
+    fontSize: 24,
+    textAlign: "center",
+  },
+  headerImageContainer: {
+    maxWidth: 120,
+  },
+  headerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  rightColumnMedical: {
+    flexDirection: "column",
+    width: 70,
+    paddingTop: 5,
+    paddingRight: 15,
+  },
+  leftColumnMedical: {
+    flexDirection: "column",
+    width: 400,
+    paddingTop: 2,
+    paddingRight: 15,
+  },
+  image: {
+    height: 100,
+    width: 200,
+    borderBottomWidth: 2,
+    borderBottomColor: "#112131",
+    borderBottomStyle: "solid",
+    paddingBottom: 5,
+    paddingLeft: 20,
+  },
+  eSign: {
+    fontSize: 8,
+    marginVertical: 4,
+  },
+  leftColumnEsign: {
+    width: 50,
+  },
+  rightColumnEsign: {
+    width: 400,
+  },
+  eSignContainer: {
+    flexDirection: "row",
+  },
+  eSignImage: {
+    width: 15,
+    height: 15,
+    marginVertical: 12,
+    marginHorizontal: 12,
+  },
+  rightColumn: {
+    flexDirection: "column",
+    width: 570,
+    paddingTop: 5,
+    paddingRight: 15,
+    height: 100,
+  },
+  informationDivText: {
+    fontSize: 14,
+    marginVertical: 4,
+  },
+  informationDiv: {
+    marginTop: 15,
+    marginBottom: 10,
+    flex: 1,
+    flexDirection: "row",
+    height: 35,
+  },
+  medicalDiv: {
+    marginTop: 5,
+    marginBottom: 10,
+    flexDirection: "row",
+  },
+  leftColumn: {
+    flexDirection: "column",
+    width: 570,
+    paddingTop: 5,
+    paddingRight: 15,
+    height: 100,
+  },
+  medicalDivText: {
+    fontSize: 10,
+    height: 40,
+  },
+  medicalDivTextSecondary: {
+    fontSize: 10,
+    paddingLeft: 10,
+    paddingVertical: 5,
+    height: 35,
+  },
+  leftColumnSmall: {
+    flexDirection: "column",
+    width: 570,
+    paddingTop: 15,
+    paddingRight: 15,
+    height: 50,
+  },
+  rightColumnSmall: {
+    flexDirection: "column",
+    width: 570,
+    paddingTop: 15,
+    paddingRight: 15,
+    height: 50,
+  },
+  certImage: {
+    height: 100,
+    width: 200,
+  },
 })
 
 const PDFFileCertified = ({
@@ -158,7 +158,7 @@ const PDFFileCertified = ({
   return (
     <Document>
       <Page style={styles.body}>
-      <Text style={styles.titleInformation}>{t("NonDisclosure.title")}</Text>
+        <Text style={styles.titleInformation}>{t("NonDisclosure.title")}</Text>
         <Text style={styles.nonDisclosure}>
           {t("NonDisclosure.part1")}{" "}
           <Text style={{ fontFamily: "Times-Italic" }}>{diveCenter}</Text>{" "}
@@ -170,7 +170,9 @@ const PDFFileCertified = ({
           <View style={styles.headerImageContainer}>
             <Image src={padiLogo} style={styles.logo} alt="Logo" />
           </View>
-          <Text style={styles.title}>{t("DiverActivitiesLiability.title")}</Text>
+          <Text style={styles.title}>
+            {t("DiverActivitiesLiability.title")}
+          </Text>
         </View>
         <Text style={styles.nonDisclosure}>
           {t("DiverActivitiesLiability.I")},{" "}
@@ -181,10 +183,8 @@ const PDFFileCertified = ({
         </Text>
         <Text style={styles.nonDisclosure}>
           {t("DiverActivitiesLiability.activitiesRelease2")},{" "}
-          <Text style={{ fontFamily: "Times-Italic" }}>
-            {diveCenter}
-          </Text>
-          ,{t("DiverActivitiesLiability.activitiesRelease3")}
+          <Text style={{ fontFamily: "Times-Italic" }}>{diveCenter}</Text>,
+          {t("DiverActivitiesLiability.activitiesRelease3")}
         </Text>
         <Text style={styles.nonDisclosure}>
           {t("DiverActivitiesLiability.activitiesRelease4")}
@@ -248,7 +248,7 @@ const PDFFileCertified = ({
       </Page>
 
       <Page style={styles.body}>
-      <View style={styles.headerContainer}>
+        <View style={styles.headerContainer}>
           <View style={styles.headerImageContainer}>
             <Image src={padiLogo} style={styles.logo} alt="Logo" />
           </View>
@@ -322,8 +322,8 @@ const PDFFileCertified = ({
       </Page>
 
       <Page style={styles.body}>
-      <Text style={styles.titleInformation}>
-      {t("InformationForm.title")}
+        <Text style={styles.titleInformation}>
+          {t("InformationForm.title")}
         </Text>
         <View style={styles.informationDiv}>
           <View style={styles.leftColumn}>
@@ -365,15 +365,15 @@ const PDFFileCertified = ({
         <View style={styles.informationDiv}>
           <View style={styles.leftColumnSmall}>
             <Text style={styles.informationDivText}>
-            {t("CertifiedInfoForm.lastDive")}: {certifiedState?.lastDive}
+              {t("CertifiedInfoForm.lastDive")}: {certifiedState?.lastDive}
             </Text>
             <Text style={styles.informationDivText}>
-            {t("CertifiedInfoForm.depDate")}: {certifiedState?.depDate}
+              {t("CertifiedInfoForm.depDate")}: {certifiedState?.depDate}
             </Text>
           </View>
           <View style={styles.rightColumnSmall}>
             <Text style={styles.informationDivText}>
-            {t("CertifiedInfoForm.totalDives")}: {certifiedState?.totalDives}
+              {t("CertifiedInfoForm.totalDives")}: {certifiedState?.totalDives}
             </Text>
           </View>
         </View>
@@ -386,9 +386,7 @@ const PDFFileCertified = ({
           />
         </View>
 
-        
-      
-      <Text style={styles.titleInformation}>{t("MedicalForm.title")}</Text>
+        <Text style={styles.titleInformation}>{t("MedicalForm.title")}</Text>
         <View style={styles.medicalDiv}>
           <View style={styles.leftColumnMedical}>
             <Text style={styles.medicalDivText}>
@@ -472,7 +470,7 @@ const PDFFileCertified = ({
             </Text>
           </View>
         </View>
-</Page>
+      </Page>
       <Page style={styles.body}>
         <Text style={styles.title}>
           Diver Medical | Participant Questionnaire Continued

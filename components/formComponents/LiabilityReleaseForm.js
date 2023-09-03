@@ -18,6 +18,11 @@ const LiabilityReleaseForm = ({ liabilityLocation }) => {
     firstName: "",
     lastName: "",
   })
+
+  const handleReroute = () => {
+    router.push("https://dive-liability.netlify.app/")
+  }
+
   let sigCanvas = useRef()
   const handleSubmit = async e => {
     e.preventDefault()
@@ -31,11 +36,12 @@ const LiabilityReleaseForm = ({ liabilityLocation }) => {
       })
       if (notValid === false) {
         setInformationError(false)
-        createLiabilityPdf(informationState, signatureImage, liabilityLocation)
-        setTimeout(() => {
-          console.log("Pushed")
-          router.push("https://dive-liability.netlify.app/")
-        }, 5000)
+        createLiabilityPdf(
+          informationState,
+          signatureImage,
+          liabilityLocation,
+          handleReroute,
+        )
       } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)

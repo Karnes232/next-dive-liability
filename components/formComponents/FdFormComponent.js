@@ -34,6 +34,11 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
   const [readMoreForm, setReadMoreForm] = useState(false)
   const router = useRouter()
   let sigCanvas = useRef()
+
+  const handleReroute = () => {
+    router.push("https://dive-liability.netlify.app/")
+  }
+
   const handleSubmit = async e => {
     e.preventDefault()
     setReadMoreForm(false)
@@ -58,15 +63,12 @@ const FdFormComponent = ({ hotel, liabilityLocation }) => {
           signatureImage,
           certifiedState,
           liabilityLocation,
+          handleReroute,
         )
         console.log("Winner")
         setInformationError(false)
         setMedicalError(false)
         setCertError(false)
-        setTimeout(() => {
-          console.log("Pushed")
-          router.push("https://dive-liability.netlify.app/")
-        }, 50000)
       } else if (notValid !== false) {
         console.log("Participant Information Missing")
         setInformationError(true)
