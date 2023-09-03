@@ -35,9 +35,6 @@ export default async function createLiabilityPdf(
           },
         )
       })
-    }).then(e => {
-      if (window) {window.location.href = "https://dive-liability.netlify.app/"}
-     // window.location.href = "https://dive-liability.netlify.app/"
     })
     if (browser.name !== "ios") {
       FileSaver.saveAs(blob, fileName)
