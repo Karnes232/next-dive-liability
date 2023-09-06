@@ -12,6 +12,7 @@ export default async function addData(colllection, id, data, handleReroute) {
     await handleReroute()
   } catch (e) {
     error = e
+    console.log(error)
   }
 
   return { result, error }
