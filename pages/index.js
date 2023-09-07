@@ -14,13 +14,7 @@ import { useEffect } from "react"
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
-  useEffect(() => {
-    navigator.serviceWorker.getRegistrations().then(function(registrations) {
-      for(let registration of registrations) {
-          registration.unregister();
-      } 
-  });
-  }, [])
+
   
   return (
     <Layout>
