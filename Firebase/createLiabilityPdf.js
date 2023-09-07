@@ -23,6 +23,7 @@ export default async function createLiabilityPdf(
     ).toBlob()
     const storage = getStorage()
     const storageRef = ref(storage, fileName)
+   
     uploadBytes(storageRef, blob).then(snapshot => {
       console.log("Uploaded a blob or file!")
       getDownloadURL(snapshot.ref).then(downloadURL => {
@@ -38,6 +39,7 @@ export default async function createLiabilityPdf(
         )
       })
     })
+  
     if (browser.name !== "ios") {
       FileSaver.saveAs(blob, fileName)
     }
