@@ -9,10 +9,19 @@ import majestic from "../images/majestic.jpg"
 import lopesan from "../images/lopesan.jpg"
 import oc from "../images/Occidental-Caribe-Punta-Cana--Resort-1.jpg"
 import op from "../images/occident-PuntaCana.jpg"
+import { useEffect } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
+  useEffect(() => {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for(let registration of registrations) {
+          registration.unregister();
+      } 
+  });
+  }, [])
+  
   return (
     <Layout>
       <main className="min-h-screen flex flex-col justify-center items-center mx-5 lg:w-3/4 max-w-4xl lg:mx-auto">
