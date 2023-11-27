@@ -1,1 +1,1 @@
-export const diveCenter = "Mariana Caribbean Sports"
+export const diveCenter = "Grand Bay of the Sea"
